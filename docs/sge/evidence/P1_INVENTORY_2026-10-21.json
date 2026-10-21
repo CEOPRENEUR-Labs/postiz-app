@@ -1,0 +1,1784 @@
+{
+  "inspected_date": "2026-10-21",
+  "upstream_basis": "651876e24317c2d8e717262cf98267ec6f699180",
+  "lock": {
+    "file": "pnpm-lock.yaml",
+    "sha256": "8834026b11cdcbc08c7ac6a8b5a6998f7ca1798d2a58cfb896ad4ca06bca3226",
+    "version": "9.0",
+    "packages": 3955,
+    "snapshots": 3992
+  },
+  "toolchain": {
+    "node": "22.22.3",
+    "pnpm": "pnpm@10.6.1",
+    "engines": {
+      "node": ">=22.22.3 <23.0.0"
+    },
+    "volta": {
+      "node": "22.22.3"
+    }
+  },
+  "caveat": "Installed license metadata is an inventory, not legal clearance; three exact package license texts were separately inspected.",
+  "production_dependencies": [
+    {
+      "name": "@ag-ui/mastra",
+      "requested": "^1.1.4",
+      "resolved": "1.1.4",
+      "license_metadata": "Apache-2.0"
+    },
+    {
+      "name": "@ai-sdk/openai",
+      "requested": "^2.0.52",
+      "resolved": "2.0.98",
+      "license_metadata": "Apache-2.0"
+    },
+    {
+      "name": "@atproto/api",
+      "requested": "^0.15.15",
+      "resolved": "0.15.27",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@aws-sdk/client-s3",
+      "requested": "^3.787.0",
+      "resolved": "3.1003.0",
+      "license_metadata": "Apache-2.0"
+    },
+    {
+      "name": "@aws-sdk/lib-storage",
+      "requested": "^3.1003.0",
+      "resolved": "3.1003.0",
+      "license_metadata": "Apache-2.0"
+    },
+    {
+      "name": "@aws-sdk/s3-request-presigner",
+      "requested": "^3.787.0",
+      "resolved": "3.1003.0",
+      "license_metadata": "Apache-2.0"
+    },
+    {
+      "name": "@casl/ability",
+      "requested": "^6.5.0",
+      "resolved": "6.8.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@copilotkit/react-core",
+      "requested": "1.72.0",
+      "resolved": "1.72.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@copilotkit/react-textarea",
+      "requested": "1.72.0",
+      "resolved": "1.72.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@copilotkit/react-ui",
+      "requested": "1.72.0",
+      "resolved": "1.72.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@copilotkit/runtime",
+      "requested": "1.72.0",
+      "resolved": "1.72.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@copilotkit/runtime-client-gql",
+      "requested": "1.72.0",
+      "resolved": "1.72.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@dub/analytics",
+      "requested": "^0.0.32",
+      "resolved": "0.0.32",
+      "license_metadata": "MPL-2.0"
+    },
+    {
+      "name": "@hookform/resolvers",
+      "requested": "^3.3.4",
+      "resolved": "3.10.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@langchain/community",
+      "requested": "^1.1.27",
+      "resolved": "1.1.27",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@langchain/core",
+      "requested": "^1.1.39",
+      "resolved": "1.1.39",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@langchain/langgraph",
+      "requested": "^1.2.8",
+      "resolved": "1.2.8",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@langchain/openai",
+      "requested": "^1.4.3",
+      "resolved": "1.4.3",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@langchain/tavily",
+      "requested": "^1.2.0",
+      "resolved": "1.2.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@mantine/core",
+      "requested": "^5.10.5",
+      "resolved": "5.10.5",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@mantine/dates",
+      "requested": "^5.10.5",
+      "resolved": "5.10.5",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@mantine/hooks",
+      "requested": "^5.10.5",
+      "resolved": "5.10.5",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@mantine/modals",
+      "requested": "^5.10.5",
+      "resolved": "5.10.5",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@mastra/core",
+      "requested": "^1.67.0",
+      "resolved": "1.67.0",
+      "license_metadata": "Apache-2.0"
+    },
+    {
+      "name": "@mastra/mcp",
+      "requested": "^1.18.0",
+      "resolved": "1.18.0",
+      "license_metadata": "Apache-2.0"
+    },
+    {
+      "name": "@mastra/memory",
+      "requested": "^1.30.0",
+      "resolved": "1.30.0",
+      "license_metadata": "Apache-2.0"
+    },
+    {
+      "name": "@mastra/pg",
+      "requested": "^1.25.0",
+      "resolved": "1.25.0",
+      "license_metadata": "Apache-2.0"
+    },
+    {
+      "name": "@meronex/icons",
+      "requested": "^4.0.0",
+      "resolved": "4.0.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@modelcontextprotocol/sdk",
+      "requested": "^1.22.0",
+      "resolved": "1.27.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@nest-lab/throttler-storage-redis",
+      "requested": "^1.2.0",
+      "resolved": "1.2.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@nestjs/cli",
+      "requested": "^11.0.21",
+      "resolved": "11.0.21",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@nestjs/common",
+      "requested": "^11.1.21",
+      "resolved": "11.1.21",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@nestjs/core",
+      "requested": "^11.1.21",
+      "resolved": "11.1.21",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@nestjs/microservices",
+      "requested": "^11.1.21",
+      "resolved": "11.1.21",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@nestjs/platform-express",
+      "requested": "^11.1.21",
+      "resolved": "11.1.21",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@nestjs/schedule",
+      "requested": "^6.1.3",
+      "resolved": "6.1.3",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@nestjs/swagger",
+      "requested": "^11.4.3",
+      "resolved": "11.4.3",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@nestjs/throttler",
+      "requested": "^6.5.0",
+      "resolved": "6.5.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@neynar/nodejs-sdk",
+      "requested": "^3.112.0",
+      "resolved": "3.137.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@pigment-css/react",
+      "requested": "^0.0.30",
+      "resolved": "0.0.30",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@postiz/wallets",
+      "requested": "^0.0.1",
+      "resolved": "0.0.1",
+      "license_metadata": "Apache-2.0"
+    },
+    {
+      "name": "@prisma/client",
+      "requested": "6.5.0",
+      "resolved": "6.5.0",
+      "license_metadata": "Apache-2.0"
+    },
+    {
+      "name": "@sentry/nestjs",
+      "requested": "10.56.0",
+      "resolved": "10.56.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@sentry/nextjs",
+      "requested": "10.56.0",
+      "resolved": "10.56.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@sentry/profiling-node",
+      "requested": "10.56.0",
+      "resolved": "10.56.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@sentry/react",
+      "requested": "10.56.0",
+      "resolved": "10.56.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@solana/wallet-adapter-react",
+      "requested": "^0.15.35",
+      "resolved": "0.15.39",
+      "license_metadata": "Apache-2.0"
+    },
+    {
+      "name": "@solana/wallet-adapter-react-ui",
+      "requested": "^0.9.35",
+      "resolved": "0.9.39",
+      "license_metadata": "Apache-2.0"
+    },
+    {
+      "name": "@stripe/react-stripe-js",
+      "requested": "^5.4.1",
+      "resolved": "5.6.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@stripe/stripe-js",
+      "requested": "^8.6.0",
+      "resolved": "8.9.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@swc/helpers",
+      "requested": "0.5.13",
+      "resolved": "0.5.13",
+      "license_metadata": "Apache-2.0"
+    },
+    {
+      "name": "@sweetalert2/theme-dark",
+      "requested": "^5.0.16",
+      "resolved": "5.0.27",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@tailwindcss/postcss",
+      "requested": "^4.1.7",
+      "resolved": "4.2.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@temporalio/activity",
+      "requested": "^1.14.0",
+      "resolved": "1.15.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@temporalio/client",
+      "requested": "^1.14.0",
+      "resolved": "1.15.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@temporalio/common",
+      "requested": "^1.14.0",
+      "resolved": "1.15.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@temporalio/worker",
+      "requested": "^1.14.0",
+      "resolved": "1.15.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@temporalio/workflow",
+      "requested": "^1.14.0",
+      "resolved": "1.15.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@tiptap/extension-bold",
+      "requested": "^3.0.6",
+      "resolved": "3.20.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@tiptap/extension-document",
+      "requested": "^3.0.6",
+      "resolved": "3.20.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@tiptap/extension-heading",
+      "requested": "^3.0.7",
+      "resolved": "3.20.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@tiptap/extension-history",
+      "requested": "^3.0.7",
+      "resolved": "3.20.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@tiptap/extension-link",
+      "requested": "^3.0.9",
+      "resolved": "3.20.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@tiptap/extension-list",
+      "requested": "^3.0.7",
+      "resolved": "3.20.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@tiptap/extension-mention",
+      "requested": "^3.0.7",
+      "resolved": "3.20.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@tiptap/extension-paragraph",
+      "requested": "^3.0.6",
+      "resolved": "3.20.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@tiptap/extension-text",
+      "requested": "^3.0.6",
+      "resolved": "3.20.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@tiptap/extension-underline",
+      "requested": "^3.0.6",
+      "resolved": "3.20.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@tiptap/pm",
+      "requested": "^3.0.6",
+      "resolved": "3.20.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@tiptap/react",
+      "requested": "^3.0.6",
+      "resolved": "3.20.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@tiptap/starter-kit",
+      "requested": "^3.0.6",
+      "resolved": "3.20.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@tiptap/suggestion",
+      "requested": "^3.0.7",
+      "resolved": "3.20.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/bcrypt",
+      "requested": "^5.0.2",
+      "resolved": "5.0.2",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/concat-stream",
+      "requested": "^2.0.3",
+      "resolved": "2.0.3",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/facebook-nodejs-business-sdk",
+      "requested": "^20.0.2",
+      "resolved": "20.0.3",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/jsonwebtoken",
+      "requested": "^9.0.5",
+      "resolved": "9.0.10",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/lodash",
+      "requested": "^4.14.202",
+      "resolved": "4.17.24",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/md5",
+      "requested": "^2.3.5",
+      "resolved": "2.3.6",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/mime",
+      "requested": "^3.0.4",
+      "resolved": "3.0.4",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/mime-types",
+      "requested": "^2.1.4",
+      "resolved": "2.1.4",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/multer",
+      "requested": "^2.2.0",
+      "resolved": "2.2.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/nodemailer",
+      "requested": "^6.4.16",
+      "resolved": "6.4.23",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/parse5",
+      "requested": "v6.0.1",
+      "resolved": "6.0.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/react-dropzone",
+      "requested": "^4.2.2",
+      "resolved": "4.2.2",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/remove-markdown",
+      "requested": "^0.3.4",
+      "resolved": "0.3.4",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/sha256",
+      "requested": "^0.2.2",
+      "resolved": "0.2.2",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/striptags",
+      "requested": "^0.0.5",
+      "resolved": "0.0.5",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/yup",
+      "requested": "^0.32.0",
+      "resolved": "0.32.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@uidotdev/usehooks",
+      "requested": "^2.4.1",
+      "resolved": "2.4.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@uiw/react-md-editor",
+      "requested": "^4.0.3",
+      "resolved": "4.0.11",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@uppy/aws-s3",
+      "requested": "^4.1.0",
+      "resolved": "4.3.2",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@uppy/compressor",
+      "requested": "^2.1.1",
+      "resolved": "2.3.2",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@uppy/core",
+      "requested": "^4.4.6",
+      "resolved": "4.5.3",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@uppy/dashboard",
+      "requested": "^4.3.4",
+      "resolved": "4.4.3",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@uppy/drag-drop",
+      "requested": "^4.1.3",
+      "resolved": "4.2.2",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@uppy/file-input",
+      "requested": "^4.1.3",
+      "resolved": "4.2.2",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@uppy/progress-bar",
+      "requested": "^4.2.1",
+      "resolved": "4.3.2",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@uppy/react",
+      "requested": "^4.3.0",
+      "resolved": "4.5.2",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@uppy/status-bar",
+      "requested": "^4.1.3",
+      "resolved": "4.2.3",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@uppy/transloadit",
+      "requested": "^4.2.2",
+      "resolved": "4.3.3",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@uppy/xhr-upload",
+      "requested": "^4.3.3",
+      "resolved": "4.4.2",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "accept-language",
+      "requested": "^3.0.20",
+      "resolved": "3.0.20",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "array-move",
+      "requested": "^4.0.0",
+      "resolved": "4.0.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "async-mutex",
+      "requested": "^0.5.0",
+      "resolved": "0.5.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "axios",
+      "requested": "^1.19.0",
+      "resolved": "1.19.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "bcrypt",
+      "requested": "^5.1.1",
+      "resolved": "5.1.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "bottleneck",
+      "requested": "^2.19.5",
+      "resolved": "2.19.5",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "bs58",
+      "requested": "^6.0.0",
+      "resolved": "6.0.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "bufferutil",
+      "requested": "^4.0.8",
+      "resolved": "4.1.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "canvas",
+      "requested": "^2.11.2",
+      "resolved": "2.11.2",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "chart.js",
+      "requested": "^4.4.1",
+      "resolved": "4.5.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "class-transformer",
+      "requested": "^0.5.1",
+      "resolved": "0.5.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "class-validator",
+      "requested": "^0.14.1",
+      "resolved": "0.14.4",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "class-validator-jsonschema",
+      "requested": "^5.1.0",
+      "resolved": "5.1.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "clsx",
+      "requested": "^2.1.0",
+      "resolved": "2.1.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "compression",
+      "requested": "^1.8.1",
+      "resolved": "1.8.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "concat-stream",
+      "requested": "^2.0.0",
+      "resolved": "2.0.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "cookie-parser",
+      "requested": "^1.4.7",
+      "resolved": "1.4.7",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "copy-to-clipboard",
+      "requested": "^3.3.3",
+      "resolved": "3.3.3",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "crypto-hash",
+      "requested": "^3.0.0",
+      "resolved": "3.1.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "dayjs",
+      "requested": "1.11.19",
+      "resolved": "1.11.19",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "dotenv",
+      "requested": "^16.5.0",
+      "resolved": "16.6.1",
+      "license_metadata": "BSD-2-Clause"
+    },
+    {
+      "name": "dotenv-cli",
+      "requested": "^8.0.0",
+      "resolved": "8.0.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "emoji-picker-react",
+      "requested": "^4.12.0",
+      "resolved": "4.18.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "evp_bytestokey",
+      "requested": "^1.0.3",
+      "resolved": "1.0.3",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "facebook-nodejs-business-sdk",
+      "requested": "^21.0.5",
+      "resolved": "21.0.5",
+      "license_metadata": "Platform License"
+    },
+    {
+      "name": "fast-xml-parser",
+      "requested": "^5.11.0",
+      "resolved": "5.11.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "file-type",
+      "requested": "^22.0.2",
+      "resolved": "22.0.2",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "google-auth-library",
+      "requested": "^9.11.0",
+      "resolved": "9.15.1",
+      "license_metadata": "Apache-2.0"
+    },
+    {
+      "name": "googleapis",
+      "requested": "^137.1.0",
+      "resolved": "137.1.0",
+      "license_metadata": "Apache-2.0"
+    },
+    {
+      "name": "hot-reload-extension-vite",
+      "requested": "^1.0.13",
+      "resolved": "1.1.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "i18n-iso-countries",
+      "requested": "^7.14.0",
+      "resolved": "7.14.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "i18next",
+      "requested": "^25.2.1",
+      "resolved": "25.8.14",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "i18next-browser-languagedetector",
+      "requested": "^8.1.0",
+      "resolved": "8.2.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "i18next-resources-to-backend",
+      "requested": "^1.2.1",
+      "resolved": "1.2.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "image-to-pdf",
+      "requested": "^3.0.2",
+      "resolved": "3.0.2",
+      "license_metadata": "ISC"
+    },
+    {
+      "name": "ioredis",
+      "requested": "^5.3.2",
+      "resolved": "5.10.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "isomorphic-dompurify",
+      "requested": "^3.10.0",
+      "resolved": "3.10.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "json-to-graphql-query",
+      "requested": "^2.2.5",
+      "resolved": "2.3.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "jsonwebtoken",
+      "requested": "^9.0.2",
+      "resolved": "9.0.3",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "lodash",
+      "requested": "^4.17.21",
+      "resolved": "4.17.23",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "mastra",
+      "requested": "^1.30.0",
+      "resolved": "1.30.0",
+      "license_metadata": "Apache-2.0"
+    },
+    {
+      "name": "md5",
+      "requested": "^2.3.0",
+      "resolved": "2.3.0",
+      "license_metadata": "BSD-3-Clause"
+    },
+    {
+      "name": "mime",
+      "requested": "^3.0.0",
+      "resolved": "3.0.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "mime-types",
+      "requested": "^2.1.35",
+      "resolved": "2.1.35",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "multer",
+      "requested": "^2.2.0",
+      "resolved": "2.2.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "music-metadata",
+      "requested": "^11.15.0",
+      "resolved": "11.15.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "nestjs-command",
+      "requested": "^3.1.4",
+      "resolved": "3.1.5",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "nestjs-real-ip",
+      "requested": "^3.0.1",
+      "resolved": "3.0.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "nestjs-temporal-core",
+      "requested": "^3.2.0",
+      "resolved": "3.2.3",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "next",
+      "requested": "16.3.1",
+      "resolved": "16.3.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "next-plausible",
+      "requested": "^3.12.0",
+      "resolved": "3.12.5",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "node-fetch",
+      "requested": "^3.3.2",
+      "resolved": "3.3.2",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "node-telegram-bot-api",
+      "requested": "^0.66.0",
+      "resolved": "0.66.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "nodemailer",
+      "requested": "^7.0.11",
+      "resolved": "7.0.13",
+      "license_metadata": "MIT-0"
+    },
+    {
+      "name": "nostr-tools",
+      "requested": "^2.18.2",
+      "resolved": "2.23.3",
+      "license_metadata": "Unlicense"
+    },
+    {
+      "name": "openai",
+      "requested": "^6.2.0",
+      "resolved": "6.27.0",
+      "license_metadata": "Apache-2.0"
+    },
+    {
+      "name": "p-limit",
+      "requested": "^3.1.0",
+      "resolved": "3.1.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "parse5",
+      "requested": "^6.0.1",
+      "resolved": "6.0.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "polotno",
+      "requested": "^3.0.0-beta.25",
+      "resolved": "3.0.0-beta.25",
+      "license_metadata": "SEE LICENSE IN LICENSE.md"
+    },
+    {
+      "name": "qrcode",
+      "requested": "^1.5.4",
+      "resolved": "1.5.4",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "react",
+      "requested": "19.2.4",
+      "resolved": "19.2.4",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "react-colorful",
+      "requested": "^5.6.1",
+      "resolved": "5.6.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "react-country-flag",
+      "requested": "^3.1.0",
+      "resolved": "3.1.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "react-dnd",
+      "requested": "^16.0.1",
+      "resolved": "16.0.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "react-dnd-html5-backend",
+      "requested": "^16.0.1",
+      "resolved": "16.0.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "react-dom",
+      "requested": "19.2.4",
+      "resolved": "19.2.4",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "react-dropzone",
+      "requested": "^14.3.5",
+      "resolved": "14.4.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "react-hook-form",
+      "requested": "^7.58.1",
+      "resolved": "7.71.2",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "react-hotkeys-hook",
+      "requested": "^5.1.0",
+      "resolved": "5.2.4",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "react-i18next",
+      "requested": "^15.5.2",
+      "resolved": "15.7.4",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "react-loading",
+      "requested": "^2.0.3",
+      "resolved": "2.0.3",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "react-sortablejs",
+      "requested": "^6.1.4",
+      "resolved": "6.1.4",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "react-tag-autocomplete",
+      "requested": "^7.2.0",
+      "resolved": "7.5.1",
+      "license_metadata": "ISC"
+    },
+    {
+      "name": "react-tooltip",
+      "requested": "^5.26.2",
+      "resolved": "5.30.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "react-use-cookie",
+      "requested": "^1.6.1",
+      "resolved": "1.6.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "react-use-keypress",
+      "requested": "^1.3.1",
+      "resolved": "1.4.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "redis",
+      "requested": "^4.6.12",
+      "resolved": "4.7.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "reflect-metadata",
+      "requested": "^0.2.2",
+      "resolved": "0.2.2",
+      "license_metadata": "Apache-2.0"
+    },
+    {
+      "name": "remove-markdown",
+      "requested": "^0.5.0",
+      "resolved": "0.5.5",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "resend",
+      "requested": "^3.2.0",
+      "resolved": "3.5.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "rss-parser",
+      "requested": "^3.13.0",
+      "resolved": "3.13.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "rxjs",
+      "requested": "^7.8.0",
+      "resolved": "7.8.2",
+      "license_metadata": "Apache-2.0"
+    },
+    {
+      "name": "sass",
+      "requested": "^1.89.2",
+      "resolved": "1.97.3",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "sha256",
+      "requested": "^0.2.0",
+      "resolved": "0.2.0",
+      "license_metadata": null
+    },
+    {
+      "name": "sharp",
+      "requested": "^0.33.4",
+      "resolved": "0.33.5",
+      "license_metadata": "Apache-2.0"
+    },
+    {
+      "name": "simple-statistics",
+      "requested": "^7.8.3",
+      "resolved": "7.8.8",
+      "license_metadata": "ISC"
+    },
+    {
+      "name": "slugify",
+      "requested": "^1.6.6",
+      "resolved": "1.6.6",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "stripe",
+      "requested": "^20.4.0",
+      "resolved": "20.4.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "striptags",
+      "requested": "^3.2.0",
+      "resolved": "3.2.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "subtitle",
+      "requested": "4.2.2-alpha.0",
+      "resolved": "4.2.2-alpha.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "sweetalert2",
+      "requested": "11.4.8",
+      "resolved": "11.4.8",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "swr",
+      "requested": "^2.2.5",
+      "resolved": "2.4.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "tailwind-scrollbar",
+      "requested": "^3.1.0",
+      "resolved": "3.1.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "tailwindcss",
+      "requested": "3.4.17",
+      "resolved": "3.4.17",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "tailwindcss-rtl",
+      "requested": "^0.9.0",
+      "resolved": "0.9.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "timezones-list",
+      "requested": "^3.1.0",
+      "resolved": "3.1.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "tippy.js",
+      "requested": "^6.3.7",
+      "resolved": "6.3.7",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "tldts",
+      "requested": "^6.1.47",
+      "resolved": "6.1.86",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "transloadit",
+      "requested": "^3.0.2",
+      "resolved": "3.0.2",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "tslib",
+      "requested": "^2.3.0",
+      "resolved": "2.8.1",
+      "license_metadata": "0BSD"
+    },
+    {
+      "name": "tweetnacl",
+      "requested": "^1.0.3",
+      "resolved": "1.0.3",
+      "license_metadata": "Unlicense"
+    },
+    {
+      "name": "twitter-api-v2",
+      "requested": "^1.29.0",
+      "resolved": "1.29.0",
+      "license_metadata": "Apache-2.0"
+    },
+    {
+      "name": "twitter-text",
+      "requested": "^3.1.0",
+      "resolved": "3.1.0",
+      "license_metadata": null
+    },
+    {
+      "name": "use-debounce",
+      "requested": "^10.0.0",
+      "resolved": "10.1.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "utf-8-validate",
+      "requested": "^5.0.10",
+      "resolved": "5.0.10",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "uuid",
+      "requested": "^10.0.0",
+      "resolved": "10.0.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "viem",
+      "requested": "^2.22.9",
+      "resolved": "2.47.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "webextension-polyfill",
+      "requested": "^0.12.0",
+      "resolved": "0.12.0",
+      "license_metadata": "MPL-2.0"
+    },
+    {
+      "name": "ws",
+      "requested": "^8.18.0",
+      "resolved": "8.19.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "yargs",
+      "requested": "^17.7.2",
+      "resolved": "17.7.2",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "yup",
+      "requested": "^1.4.0",
+      "resolved": "1.7.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "zod",
+      "requested": "^3.25.76",
+      "resolved": "3.25.76",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "zustand",
+      "requested": "^5.0.5",
+      "resolved": "5.0.11",
+      "license_metadata": "MIT"
+    }
+  ],
+  "development_dependencies": [
+    {
+      "name": "@crxjs/vite-plugin",
+      "requested": "^2.7.1",
+      "resolved": "2.7.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@nestjs/schematics",
+      "requested": "^11.1.0",
+      "resolved": "11.1.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@nestjs/testing",
+      "requested": "^11.1.21",
+      "resolved": "11.1.21",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@pmmmwh/react-refresh-webpack-plugin",
+      "requested": "^0.5.7",
+      "resolved": "0.5.17",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@svgr/webpack",
+      "requested": "^8.0.1",
+      "resolved": "8.1.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@swc-node/register",
+      "requested": "1.9.2",
+      "resolved": "1.9.2",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@swc/cli",
+      "requested": "0.3.14",
+      "resolved": "0.3.14",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@swc/core",
+      "requested": "1.5.7",
+      "resolved": "1.5.7",
+      "license_metadata": "Apache-2.0"
+    },
+    {
+      "name": "@tailwindcss/vite",
+      "requested": "^4.0.17",
+      "resolved": "4.2.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@testing-library/react",
+      "requested": "16.3.0",
+      "resolved": "16.3.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/cache-manager-redis-store",
+      "requested": "^2.0.4",
+      "resolved": "2.0.4",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/chrome",
+      "requested": "^0.0.319",
+      "resolved": "0.0.319",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/compression",
+      "requested": "^1.8.1",
+      "resolved": "1.8.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/cookie-parser",
+      "requested": "^1.4.6",
+      "resolved": "1.4.10",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/express",
+      "requested": "^5.0.6",
+      "resolved": "5.0.6",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/jest",
+      "requested": "29.5.12",
+      "resolved": "29.5.12",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/node",
+      "requested": "18.16.9",
+      "resolved": "18.16.9",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/node-telegram-bot-api",
+      "requested": "^0.64.7",
+      "resolved": "0.64.14",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/qrcode",
+      "requested": "^1.5.5",
+      "resolved": "1.5.5",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/react",
+      "requested": "19.1.8",
+      "resolved": "19.1.8",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/react-dom",
+      "requested": "19.1.6",
+      "resolved": "19.1.6",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/uuid",
+      "requested": "^9.0.8",
+      "resolved": "9.0.8",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/webextension-polyfill",
+      "requested": "^0.12.3",
+      "resolved": "0.12.5",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@types/yargs",
+      "requested": "^17.0.32",
+      "resolved": "17.0.35",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@typescript-eslint/eslint-plugin",
+      "requested": "7.18.0",
+      "resolved": "7.18.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@typescript-eslint/parser",
+      "requested": "7.18.0",
+      "resolved": "7.18.0",
+      "license_metadata": "BSD-2-Clause"
+    },
+    {
+      "name": "@vitejs/plugin-react",
+      "requested": "^6.0.5",
+      "resolved": "6.0.5",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@vitest/coverage-v8",
+      "requested": "1.6.0",
+      "resolved": "1.6.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "@vitest/ui",
+      "requested": "1.6.0",
+      "resolved": "1.6.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "autoprefixer",
+      "requested": "^10.4.17",
+      "resolved": "10.4.27",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "babel-jest",
+      "requested": "29.7.0",
+      "resolved": "29.7.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "cross-env",
+      "requested": "^10.0.0",
+      "resolved": "10.1.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "eslint",
+      "requested": "8.57.0",
+      "resolved": "8.57.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "eslint-config-next",
+      "requested": "16.2.6",
+      "resolved": "16.2.6",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "eslint-config-prettier",
+      "requested": "^9.0.0",
+      "resolved": "9.1.2",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "eslint-plugin-import",
+      "requested": "2.27.5",
+      "resolved": "2.27.5",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "eslint-plugin-jsx-a11y",
+      "requested": "6.7.1",
+      "resolved": "6.7.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "eslint-plugin-react",
+      "requested": "7.32.2",
+      "resolved": "7.32.2",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "eslint-plugin-react-hooks",
+      "requested": "4.6.0",
+      "resolved": "4.6.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "fs-extra",
+      "requested": "^11.3.0",
+      "resolved": "11.3.4",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "jest",
+      "requested": "29.7.0",
+      "resolved": "29.7.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "jest-environment-jsdom",
+      "requested": "29.7.0",
+      "resolved": "29.7.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "jest-environment-node",
+      "requested": "^29.4.1",
+      "resolved": "29.7.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "jest-junit",
+      "requested": "^16.0.0",
+      "resolved": "16.0.0",
+      "license_metadata": "Apache-2.0"
+    },
+    {
+      "name": "jest-mock-extended",
+      "requested": "^4.0.0-beta1",
+      "resolved": "4.0.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "jsdom",
+      "requested": "~22.1.0",
+      "resolved": "22.1.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "nodemon",
+      "requested": "^3.1.9",
+      "resolved": "3.1.14",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "postcss",
+      "requested": "8.5.26",
+      "resolved": "8.5.26",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "prettier",
+      "requested": "^2.6.2",
+      "resolved": "2.8.8",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "prisma",
+      "requested": "6.5.0",
+      "resolved": "6.5.0",
+      "license_metadata": "Apache-2.0"
+    },
+    {
+      "name": "react-refresh",
+      "requested": "^0.10.0",
+      "resolved": "0.10.0",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "ts-jest",
+      "requested": "^29.1.0",
+      "resolved": "29.4.6",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "ts-node",
+      "requested": "10.9.2",
+      "resolved": "10.9.2",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "tsup",
+      "requested": "^8.5.0",
+      "resolved": "8.5.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "typescript",
+      "requested": "5.5.4",
+      "resolved": "5.5.4",
+      "license_metadata": "Apache-2.0"
+    },
+    {
+      "name": "vite",
+      "requested": "^8.2.1",
+      "resolved": "8.2.1",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "vite-tsconfig-paths",
+      "requested": "^5.1.4",
+      "resolved": "5.1.4",
+      "license_metadata": "MIT"
+    },
+    {
+      "name": "vitest",
+      "requested": "3.1.4",
+      "resolved": "3.1.4",
+      "license_metadata": "MIT"
+    }
+  ],
+  "compose": {
+    "production": [
+      {
+        "service": "postiz",
+        "image": "ghcr.io/gitroomhq/postiz-app:latest",
+        "digest_pinned": false
+      },
+      {
+        "service": "postiz-postgres",
+        "image": "postgres:17-alpine",
+        "digest_pinned": false
+      },
+      {
+        "service": "postiz-redis",
+        "image": "redis:7.2",
+        "digest_pinned": false
+      },
+      {
+        "service": "spotlight",
+        "image": "ghcr.io/getsentry/spotlight:latest",
+        "digest_pinned": false
+      },
+      {
+        "service": "temporal-elasticsearch",
+        "image": "elasticsearch:7.17.27",
+        "digest_pinned": false
+      },
+      {
+        "service": "temporal-postgresql",
+        "image": "postgres:16",
+        "digest_pinned": false
+      },
+      {
+        "service": "temporal",
+        "image": "temporalio/auto-setup:1.28.1",
+        "digest_pinned": false
+      },
+      {
+        "service": "temporal-admin-tools",
+        "image": "temporalio/admin-tools:1.28.1-tctl-1.18.4-cli-1.4.1",
+        "digest_pinned": false
+      },
+      {
+        "service": "temporal-ui",
+        "image": "temporalio/ui:2.34.0",
+        "digest_pinned": false
+      }
+    ],
+    "development": [
+      {
+        "service": "postiz-postgres",
+        "image": "postgres:17-alpine",
+        "digest_pinned": false
+      },
+      {
+        "service": "postiz-redis",
+        "image": "redis:7-alpine",
+        "digest_pinned": false
+      },
+      {
+        "service": "postiz-pg-admin",
+        "image": "dpage/pgadmin4:latest",
+        "digest_pinned": false
+      },
+      {
+        "service": "postiz-redisinsight",
+        "image": "redis/redisinsight:latest",
+        "digest_pinned": false
+      },
+      {
+        "service": "temporal-elasticsearch",
+        "image": "elasticsearch:7.17.27",
+        "digest_pinned": false
+      },
+      {
+        "service": "temporal-postgresql",
+        "image": "postgres:16",
+        "digest_pinned": false
+      },
+      {
+        "service": "temporal",
+        "image": "temporalio/auto-setup:1.28.1",
+        "digest_pinned": false
+      },
+      {
+        "service": "temporal-admin-tools",
+        "image": "temporalio/admin-tools:1.28.1-tctl-1.18.4-cli-1.4.1",
+        "digest_pinned": false
+      },
+      {
+        "service": "temporal-ui",
+        "image": "temporalio/ui:2.34.0",
+        "digest_pinned": false
+      }
+    ]
+  },
+  "reviewed_license_packages": [
+    {
+      "name": "polotno",
+      "version": "3.0.0-beta.25",
+      "tarball_sha256": "97f79de9efea938756757e3119c705f2ccdfad4d2e823a5e0ae2114a8ea527d3",
+      "license_sha256": "0c034c9f0e65d54e251ebf3d9e1f70bf428a9bf939d0a2b17497f22b60b8ea1a",
+      "registry_sri_matches_lock": true,
+      "tarball_sri_matches_lock": true,
+      "release_clearance": "OPEN: commercial editor license required"
+    },
+    {
+      "name": "sweetalert2",
+      "version": "11.4.8",
+      "tarball_sha256": "3b47032917271d65a83dce6ab9ae256de53bd5636565603597461512276ff896",
+      "license_sha256": "879aa33feba35b3428c6485fc17cddd8c820d7a8780281aa945e60582a28c4b4",
+      "registry_sri_matches_lock": true,
+      "tarball_sri_matches_lock": true,
+      "license": "MIT"
+    },
+    {
+      "name": "@postiz/wallets",
+      "version": "0.0.1",
+      "tarball_sha256": "67d8924ccb0cbe8ff3c9d7e61600c9d42c861abdcef26f22b65248eb63b2f7c1",
+      "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "registry_sri_matches_lock": true,
+      "tarball_sri_matches_lock": true,
+      "license": "Apache-2.0",
+      "notice_in_tarball": false
+    }
+  ]
+}

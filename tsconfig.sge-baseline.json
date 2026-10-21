@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "incremental": false,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "target": "ES2021",
+    "types": ["node"]
+  },
+  "include": ["vitest.sge.config.ts", "tests/sge-baseline/**/*.test.ts"]
+}

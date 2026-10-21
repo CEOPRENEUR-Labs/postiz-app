@@ -1,0 +1,108 @@
+{
+  "checked_date": "2026-10-21",
+  "scope": "Local macOS arm64 build and static/unit baseline; not runtime, provider, container or hosted CI acceptance",
+  "source_basis": "2b624a9a84252474dded93fbadbfe4c7857183e6",
+  "checks": {
+    "install-offline": {
+      "exit_code": 0,
+      "node": "22.22.3",
+      "pnpm": "10.6.1",
+      "seconds": 4.39,
+      "network": "DENY",
+      "user_directory_access": "DENY",
+      "log_sha256": "f3c1285a2b5bb2ec162c79bbf15e0e57370bc6f86baeb3800b2b668786913f6e"
+    },
+    "generate": {
+      "exit_code": 0,
+      "node": "22.22.3",
+      "pnpm": "10.6.1",
+      "seconds": 1.51,
+      "network": "DENY",
+      "user_directory_access": "DENY",
+      "log_sha256": "56cd821f8941ce2ae41e1b2362d3583815d9fb25c02e876fdf829f57d5576536"
+    },
+    "canonical-test": {
+      "exit_code": 0,
+      "node": "22.22.3",
+      "pnpm": "10.6.1",
+      "seconds": 3.38,
+      "network": "DENY",
+      "user_directory_access": "DENY",
+      "log_sha256": "f78a7b1141f0c6717cf19eae9607fd1621fba62d95bcc508659245a4fdcf92e3"
+    },
+    "types": {
+      "exit_code": 0,
+      "node": "22.22.3",
+      "pnpm": "10.6.1",
+      "seconds": 2.18,
+      "network": "DENY",
+      "user_directory_access": "DENY",
+      "log_sha256": "53b44aee34bae39ec8c0beada72f2ec3cd343bf5d4bfc1d2a427b74ac48dfb2f"
+    },
+    "lint": {
+      "exit_code": 0,
+      "node": "22.22.3",
+      "pnpm": "10.6.1",
+      "seconds": 3.32,
+      "network": "DENY",
+      "user_directory_access": "DENY",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "build": {
+      "exit_code": 0,
+      "node": "22.22.3",
+      "pnpm": "10.6.1",
+      "seconds": 384.25,
+      "network": "DENY",
+      "user_directory_access": "DENY",
+      "log_sha256": "74fb818490fea1cac5dc0b2699b9e176a0f7d74baa3e8bcb847b94acbc7cbb78"
+    }
+  },
+  "tests": {
+    "files": 3,
+    "cases": 58,
+    "failed": 0
+  },
+  "source_sha256": {
+    "package.json": "61e855cb489466ffef094869ef192b01cfc7f704ad74abd2b2e1ca63e63c79a8",
+    "apps/frontend/package.json": "8e31c54bc7acda861f73c61b7bd4b6649b5cf7930031bbcfa765dfd77fdeb5cb",
+    "apps/frontend/next.config.js": "4a5a3473a5e269a4c4382575fe8a63575df95a3bec4c17de01fc8bff3269a659",
+    "eslint.config.mjs": "c8b3a0fdb5aa187de52e96e2d8fca41b276510bff2753c2b6c3298e6aa49dea4",
+    "vitest.sge.config.ts": "8d8137462f3b4e1f86ea3977fdebdef6a42394edfc70028a6576baa61d92ef8c",
+    "tsconfig.sge-baseline.json": "0a5a04742c360aa44cfcf0da0e3a528262da8a6a209efd9a47db93a526fb7689",
+    "tests/sge-baseline/oauth-headers.test.ts": "c3503bbefac506628e1c1eeaaea95347e134d483b66eb7627a2030220a592174",
+    "tests/sge-baseline/webhook-targets.test.ts": "3d95b0033fd717c739237f9faa4a026e2702635aebc0827a104d31825126d2ef",
+    "tests/sge-baseline/post-content.test.ts": "47f21d08f79d0597f09ba6538d6ad64db102e881d5515001fe9e300bd0e50621",
+    ".github/workflows/sge-baseline.yml": "66788c3c0f0fb404355c58ee6ec6f078eac27b7020cdebaf1d8863138cd946ed",
+    ".github/workflows/build.yml": "f888775ec330c5782c46d2cdc523a13f613a6e556bb1fac6253891ee3e3ac9d4"
+  },
+  "unchanged_lock_sha256": "8834026b11cdcbc08c7ac6a8b5a6998f7ca1798d2a58cfb896ad4ca06bca3226",
+  "production_actions": {
+    "deployment": false,
+    "account_connections": false,
+    "provider_credentials": false,
+    "publication": false,
+    "database_started_or_migrated": false
+  },
+  "github_protection": {
+    "secret_scanning": "enabled",
+    "push_protection": "enabled",
+    "vulnerability_alerts": "enabled",
+    "provider_validity_checks": "disabled",
+    "automatic_update_prs": "disabled"
+  },
+  "release_gate": "BLOCKED: dependency advisories, auth/token protection, licensing and operating acceptance remain unresolved",
+  "independent_review": {
+    "technical_diff": 9.1,
+    "ci_configuration": 9.0,
+    "documentation_and_evidence": 9.2,
+    "scope": "accepted local technical baseline and inventory; no security/runtime release acceptance",
+    "hosted_ci": "NOT_VERIFIED"
+  },
+  "secret_scan": {
+    "raw_findings": 24,
+    "classified_non_credentials": 24,
+    "review_required": 0,
+    "report": "P1_SECRET_SCAN_2026-10-21.json"
+  }
+}

@@ -3,6 +3,8 @@
 This fork is being evaluated as a separately hosted publishing service for SGE.
 See the [integration plan](docs/sge/INTEGRATION_PLAN.md),
 [roadmap](docs/sge/ROADMAP.md), and [current tasks](docs/sge/TODO.md).
+The [P1 baseline](docs/sge/BASELINE.md) records passing local builds/tests and
+the security and licensing gates that still block a release.
 The integration is planned, not deployed. Upstream's AGPL license is retained.
 
 <p align="center">

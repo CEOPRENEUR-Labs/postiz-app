@@ -5,6 +5,7 @@ import { withSentryConfig } from '@sentry/nextjs';
 const nextConfig = {
   experimental: {
     proxyTimeout: 90_000,
+    webpackMemoryOptimizations: true,
   },
   // Document-Policy header for browser profiling
   async headers() {
@@ -22,6 +23,7 @@ const nextConfig = {
   },
   reactStrictMode: false,
   transpilePackages: ['crypto-hash'],
+  serverExternalPackages: ['isomorphic-dompurify'],
   // Enable production sourcemaps for Sentry
   productionBrowserSourceMaps: true,
 

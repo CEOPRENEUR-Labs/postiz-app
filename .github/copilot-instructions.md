@@ -10,11 +10,12 @@
 - Social login integrations (Instagram, Facebook) and Make.com/N8N integrations.
 
 ## Developer Workflows
-- Use Node.js 20.17.0 and pnpm 8+.
+- Use Node.js 22.22.3 and pnpm 10.6.1, as pinned by this fork.
 - Install dependencies: `pnpm install`
 - Build all apps: `pnpm run build`
 - Run all apps in dev mode: `pnpm run dev`
-- Test: `pnpm test` (Jest, coverage enabled)
+- Test: `pnpm test` (the real SGE baseline Vitest suite; no coverage claim).
+- Baseline preparation and current acceptance limits: `docs/sge/BASELINE.md`.
 - Individual app scripts are in each app's `package.json` (e.g., `pnpm --filter ./apps/backend run dev`).
 - Prisma DB commands: `pnpm run prisma-generate`, `pnpm run prisma-db-push`, `pnpm run prisma-reset`.
 - Docker: `docker compose -f ./docker-compose.dev.yaml up -d`
@@ -37,7 +38,7 @@
 - `libraries/` — Shared code and modules
 - `docker-compose.dev.yaml` — Local development Docker setup
 - `.env` — Environment configuration
-- `jest.config.ts` — Test configuration
+- `vitest.sge.config.ts` — Active baseline test configuration; inherited Nx/Jest configs are unused.
 - `pnpm-workspace.yaml` — Workspace package management
 - `README.md` — General project overview
 - `libraries/nestjs-libraries/src/database/prisma/schema.prisma` — Database schema

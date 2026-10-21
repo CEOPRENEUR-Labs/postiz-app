@@ -1,0 +1,58 @@
+name: SGE fork baseline
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/sge-baseline.yml'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'pnpm-workspace.yaml'
+      - '.npmrc'
+      - 'eslint.config.mjs'
+      - 'tsconfig*.json'
+      - 'vitest.sge.config.ts'
+      - 'tests/**'
+      - 'apps/**'
+      - 'libraries/**'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sge-baseline-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    if: github.repository == 'CEOPRENEUR-Labs/postiz-app'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      DO_NOT_TRACK: '1'
+      CHECKPOINT_DISABLE: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+        with:
+          version: 10.6.1
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22.22.3
+          cache: pnpm
+      - name: Install locked dependencies without lifecycle hooks
+        run: pnpm install --frozen-lockfile --ignore-scripts
+      - name: Generate the pinned Prisma client without a database
+        run: pnpm exec prisma generate --schema libraries/nestjs-libraries/src/database/prisma/schema.prisma
+      - name: Check baseline types
+        run: pnpm run typecheck:sge-baseline
+      - name: Lint baseline tests
+        run: pnpm run lint:sge-baseline
+      - name: Run actual contract tests
+        run: pnpm test
+      - name: Build frontend, backend and orchestrator
+        run: pnpm run build

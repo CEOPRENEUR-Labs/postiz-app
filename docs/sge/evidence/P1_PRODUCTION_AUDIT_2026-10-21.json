@@ -1,0 +1,113 @@
+{
+  "date": "2026-10-21",
+  "tool": "pnpm 10.6.1 audit --prod --json",
+  "scope": "Exact copied lockfile and seven workspace manifests; no runtime reachability claim",
+  "exit_code": 1,
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 35,
+      "moderate": 213,
+      "high": 163,
+      "critical": 15
+    },
+    "dependencies": 3552,
+    "devDependencies": 0,
+    "optionalDependencies": 0,
+    "totalDependencies": 3552
+  },
+  "advisory_count": 357,
+  "critical_advisories": [
+    {
+      "package": "happy-dom",
+      "id": "GHSA-37j7-fg3j-429f",
+      "patched": ">=20.0.0",
+      "url": "https://github.com/advisories/GHSA-37j7-fg3j-429f"
+    },
+    {
+      "package": "form-data",
+      "id": "GHSA-fjxv-7rqg-78g4",
+      "patched": ">=2.5.4",
+      "url": "https://github.com/advisories/GHSA-fjxv-7rqg-78g4"
+    },
+    {
+      "package": "protobufjs",
+      "id": "GHSA-xq3m-2v4x-88gg",
+      "patched": ">=7.5.5",
+      "url": "https://github.com/advisories/GHSA-xq3m-2v4x-88gg"
+    },
+    {
+      "package": "shell-quote",
+      "id": "GHSA-w7jw-789q-3m8p",
+      "patched": ">=1.8.4",
+      "url": "https://github.com/advisories/GHSA-w7jw-789q-3m8p"
+    },
+    {
+      "package": "tar",
+      "id": "GHSA-23hp-3jrh-7fpw",
+      "patched": ">=7.5.19",
+      "url": "https://github.com/advisories/GHSA-23hp-3jrh-7fpw"
+    },
+    {
+      "package": "vitest",
+      "id": "GHSA-5xrq-8626-4rwp",
+      "patched": ">=3.2.6",
+      "url": "https://github.com/advisories/GHSA-5xrq-8626-4rwp"
+    },
+    {
+      "package": "next",
+      "id": "GHSA-p293-qw3h-jr36",
+      "patched": ">=16.3.3",
+      "url": "https://github.com/advisories/GHSA-p293-qw3h-jr36"
+    },
+    {
+      "package": "next",
+      "id": "GHSA-2xp9-vwfh-vxw4",
+      "patched": ">=16.3.3",
+      "url": "https://github.com/advisories/GHSA-2xp9-vwfh-vxw4"
+    },
+    {
+      "package": "next",
+      "id": "GHSA-vcvr-r3jv-pc5j",
+      "patched": ">=16.3.6",
+      "url": "https://github.com/advisories/GHSA-vcvr-r3jv-pc5j"
+    },
+    {
+      "package": "piscina",
+      "id": "GHSA-67c8-pqhq-4rmx",
+      "patched": ">=4.9.4",
+      "url": "https://github.com/advisories/GHSA-67c8-pqhq-4rmx"
+    },
+    {
+      "package": "proxy-addr",
+      "id": "GHSA-jqcg-44mw-7w3h",
+      "patched": ">=2.0.8",
+      "url": "https://github.com/advisories/GHSA-jqcg-44mw-7w3h"
+    },
+    {
+      "package": "tinypool",
+      "id": "GHSA-5gmw-xhrv-c9v3",
+      "patched": ">=2.1.1",
+      "url": "https://github.com/advisories/GHSA-5gmw-xhrv-c9v3"
+    },
+    {
+      "package": "tinypool",
+      "id": "GHSA-85c8-ppgw-ccpr",
+      "patched": ">=2.1.2",
+      "url": "https://github.com/advisories/GHSA-85c8-ppgw-ccpr"
+    },
+    {
+      "package": "handlebars",
+      "id": "GHSA-8r5x-fm3f-whwj",
+      "patched": ">=4.7.10",
+      "url": "https://github.com/advisories/GHSA-8r5x-fm3f-whwj"
+    },
+    {
+      "package": "handlebars",
+      "id": "GHSA-p8wg-vrv2-v86f",
+      "patched": ">=4.7.10",
+      "url": "https://github.com/advisories/GHSA-p8wg-vrv2-v86f"
+    }
+  ],
+  "release_gate": "BLOCKED pending dependency triage and remediation"
+}

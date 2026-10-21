@@ -1,6 +1,6 @@
 # Postiz as the SGE publishing service
 
-Updated: 2026-10-20. Status: approved direction; implementation not started.
+Updated: 2026-10-21. Status: P1 technical baseline accepted locally; release blocked.
 
 This document is the canonical plan for this fork. [ROADMAP](ROADMAP.md)
 tracks order, [TODO](TODO.md) tracks open work, [SESSION](SESSION.md) records
@@ -14,10 +14,11 @@ fork plus a staged integration plan. The fork is
 based on upstream commit `651876e24317c2d8e717262cf98267ec6f699180`.
 The original [LICENSE](../../LICENSE), copyright notices, and ancestry remain.
 
-FACT — This package creates the fork and documentation only. It does not
-authorize hosting purchases, account connections, credential changes, social
-publication, deployments, billing changes, or activation of existing SGE gates.
-No Labs application code is copied into this public repository.
+FACT — P0 created the fork and documentation. The owner then requested P1 and
+repair of its build/test failures. This does not authorize hosting purchases,
+account connections, credential changes, social publication, deployments,
+billing changes, or activation of existing SGE gates. No Labs application code
+is copied into this public repository.
 
 DECISION — Operate Postiz separately and integrate through its public HTTP API.
 Labs retains SGE content creation and account authority. Postiz handles selected
@@ -108,11 +109,19 @@ write paths, failure behavior, and gates in Labs `SYSTEM.md` with implementation
 
 ### P1 — Establish an executable, maintainable baseline
 
+- ACCEPTED as a technical baseline: [P1 inventory and checks](BASELINE.md).
+  Node 22.22.3, frozen offline install, ordinary offline Prisma generation,
+  all 58 tests, narrow lint/types and the complete three-app build passed.
+  Independent technical review: 9.1/10. Hosted CI remains a separate check.
+- BLOCKED for release: the production dependency audit reports 15 critical
+  entries. Before P2 exposes a service or accepts real credentials, triage and
+  repair affected shipped dependencies. Auth/token, license and operating gates
+  also remain. Technical acceptance does not waive any of these gates.
 - Review pinned architecture, all relevant repo instructions, scripts, workflows,
   lockfile, licenses, auth, token storage, outbound calls, and default features.
-- Resolve the Node-version discrepancy: root engines and build CI use Node 22,
-  while the inherited Volta entry uses Node 20. Use verified supported versions
-  and pnpm; do not invent nonexistent lint/typecheck scripts.
+- Resolved the Node discrepancy: root engines, Volta and both build workflows
+  now use the supported 22.22.3 baseline. The original Node 20 and 22.12 pins were
+  incompatible with current dependencies. pnpm remains 10.6.1.
 - Inspect install/build hooks before running them. In an isolated environment,
   reproduce the pinned build and relevant upstream tests without production
   secrets, migrations, publication, mail, AI, or payment calls. Record any baseline
@@ -206,18 +215,20 @@ write paths, failure behavior, and gates in Labs `SYSTEM.md` with implementation
   metrics separately after P6. Establish each provider's actual capabilities.
 - Analytics must identify source, account type, time window, and missing data;
   unavailable values are not zero, and publication does not prove growth or sales.
-- Before wider release, validate multi-tenant isolation, access revocation,
-  billing/quotas if proposed, export/deletion/retention, support and provider outage
-  operation, accessible localized UI, and exact deployed-source compliance.
+- Before wider release, verify tenant isolation and revocation behavior.
+  Validate proposed billing and quotas, data export and deletion, retention,
+  support and provider outage operation, accessible localized UI, and compliance
+  of the exact deployed covered source.
 - Accept only the individually proven capabilities; no automatic discovery,
   outreach, profile scraping, or replacement of SGE's audit product is included.
 
-## First next package
+## Current next gate
 
-P1 only: produce the pinned architecture/runtime inventory and a proposed
-isolated baseline-verification procedure. Review existing scripts, workflows,
-licenses, and external effects before installing or executing anything.
-No production or account connection is needed for that package.
+Triage the exact dependency advisories, starting with critical/high production
+entries, and repair or demonstrably omit affected packages from the proposed
+text-only service artifact. Record tests and a fresh audit before accepting that
+artifact. Then address license, token, role and egress gates in an isolated P2
+operating proposal. No production or account connection is authorized by this plan.
 
 ## References
 
