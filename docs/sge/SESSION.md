@@ -43,7 +43,21 @@ contracts; no runtime tests were successfully run by the reviewer. The parent
 owns the runtime checks above. HTTP2 controls/session failures, CIDR/proxy ReDoS
 and several other gadgets were not individually reproduced. Application SSRF,
 trusted proxies, token/tenant, license, container/native and operating acceptance
-remain open. Hosted verification must refer to the pushed revision separately.
+remain open.
+
+Post-push verification on exact code `11b58cae57d164d4d5a945959a31f5d114341296`:
+[Build 39664881420](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/runs/39664881420)
+and [SGE baseline 39664881466](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/runs/39664881466)
+both completed successfully. Every baseline step passed, including critical
+audit, frozen install, Prisma, types/lint, contract tests and full build.
+
+The authenticated GitHub UI showed the last manifest check nine hours earlier.
+Used GitHub's documented More Dependabot options → Refresh Dependabot alerts.
+After processing, UI and REST confirm 0 open / 20 fixed critical alerts, no
+manual dismissals. SBOM now contains Next 16.3.6, Vitest 4.1.2, Axios 1.20.0 and
+follow-redirects 1.16.1, with no Happy DOM/Tinypool. Retained screenshot, fixed
+alert metadata and hosted receipts in the standalone security artifact collection.
+Documentation/evidence cross-check: 9.0/10; package review remains 8.5/10.
 
 ## 2026-10-21 — P1a critical dependency repair
 

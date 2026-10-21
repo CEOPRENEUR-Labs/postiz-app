@@ -19,8 +19,10 @@ selected advisory records disappear (9 high, 5 moderate); three newly reported
 Vite records remain open without changing Vite. Full audit retains 141 high;
 plain critical CI gate passes. No ignore, dismissal or secret was added.
 Release remains BLOCKED; the remaining plain-Axios media path, egress and the
-other security/license/operating gates are separate work. Exact-revision hosted
-CI follows push. See [P1b plan](INTEGRATION_PLAN.md#p1b--repair-the-shared-http-dependency-boundary).
+other security/license/operating gates are separate work. Both hosted Build and
+SGE baseline passed on code `11b58ca`. A documented Dependabot graph refresh
+now confirms all 20 historical critical alerts fixed (0 open, none dismissed),
+with current package versions in GitHub SBOM. See [P1b plan](INTEGRATION_PLAN.md#p1b--repair-the-shared-http-dependency-boundary).
 
 ## 2026-10-21 — Critical dependency remediation
 

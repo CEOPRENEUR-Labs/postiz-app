@@ -227,9 +227,12 @@ conversion in `posts.service.ts` remains a separate SSRF review item. This updat
 does not establish safe egress, token/tenant isolation or production acceptance.
 
 FACT — On the starting Main `fec83dd`, the Build and SGE baseline workflows both
-passed. GitHub still lists 20 historical critical alerts with stale graph data;
-closure is not confirmed. The inherited scheduled staging resolver fails its SSH
-preflight without a usable deploy key (run 39662155808), independently of builds.
+passed. At that checkpoint GitHub still listed 20 critical alerts with stale graph data;
+closure was not confirmed at that checkpoint. A documented UI refresh after
+P1b push rebuilt the graph: REST and UI now confirm 0 open / 20 fixed critical
+alerts, none dismissed. SBOM now resolves Next 16.3.6, Vitest 4.1.2, Axios 1.20.0
+and follow-redirects 1.16.1, without Happy DOM or Tinypool. The inherited
+scheduled staging resolver fails its SSH preflight without a usable deploy key (run 39662155808), independently of builds.
 Do not provision production secrets to make that inherited job pass.
 
 ### P2 — Define and prove isolated service operation
@@ -323,14 +326,16 @@ Do not provision production secrets to make that inherited job pass.
 
 ## Current next gate
 
-P1b is accepted locally at 8.5/10 (98 tests, types/lint and full build). Check
-the accepted revision in the
-[GitHub baseline workflow](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/workflows/sge-baseline.yml)
-separately after push. Continue bounded high-severity triage (136 production
+P1b is accepted at 8.5/10: 98 tests, types/lint and full build locally; both
+[SGE baseline](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/runs/39664881466)
+and [Build](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/runs/39664881420)
+passed on exact code revision `11b58cae57d164d4d5a945959a31f5d114341296`.
+GitHub graph refresh confirms all 20 historical critical alerts fixed.
+Continue bounded high-severity triage (136 production
 entries), starting with Next's remaining image-optimization advisory and the
 selected artifact's egress paths. Keep license, token, role, trusted-proxy,
-container and recovery gates in P2. The inherited staging automation and stale
-Dependabot/history-scan state need separate fork-specific follow-up.
+container and recovery gates in P2. The inherited staging automation and unverified
+history secret-scan state need separate fork-specific follow-up.
 No production or account connection is authorized here.
 
 ## References

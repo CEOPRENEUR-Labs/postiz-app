@@ -6,7 +6,7 @@ Updated: 2026-10-21. Scope and acceptance: [integration plan](INTEGRATION_PLAN.m
 
 - [x] Verify the final P1 build (`065236b`) on GitHub: success.
 - [x] Patch the dependency versions behind 20 historical critical alert instances.
-- [ ] Confirm GitHub graph refresh and actual alert closure; 20 remain open at P1b start.
+- [x] Refresh GitHub graph and confirm all 20 critical alerts fixed (0 open, none dismissed).
 - [x] Add package-boundary and compatibility regressions; 82 tests and narrow types/lint pass.
 - [x] Repeat production/all-lock audits: zero critical; retain the other severity findings.
 - [x] Complete the final three-app build, localhost HTTP smoke and independent review (9.0/10).
@@ -14,7 +14,7 @@ Updated: 2026-10-21. Scope and acceptance: [integration plan](INTEGRATION_PLAN.m
   [baseline workflow](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/workflows/sge-baseline.yml).
 - [x] Repair Axios/redirect dependencies with before/after probes and 16 regression cases.
 - [x] Complete P1b full build and independent review (8.5/10).
-- [ ] Verify P1b exact-revision hosted CI after push.
+- [x] Verify both hosted P1b workflows on exact code `11b58ca`: success.
 - [ ] Triage 136 remaining high production audit entries before any exposed service or real token.
   Next: remaining Next image-optimization advisory and selected artifact egress paths.
 - [ ] Make inherited staging automation appropriate for this fork; its SSH preflight
