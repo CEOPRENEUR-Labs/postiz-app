@@ -225,7 +225,11 @@ installation, ordinary offline Prisma generation, all 58 cases, baseline lint/ty
 and the complete frontend/backend/orchestrator build pass on Node 22.22.3.
 The full build includes frontend TypeScript, page generation and traces; exit 0,
 384.25 seconds. [Exact scope and file hashes](evidence/P1_VERIFICATION_2026-10-21.json).
-Hosted CI is a separate check after push, not implied by the local result.
+Separately verified on GitHub: the baseline workflow (58 tests, types/lint,
+Prisma and full build), inherited full build and CodeQL all passed on
+`00e8463a0ce07707a9765074899e95f2bddab433`.
+[Run URLs, exact revision and step outcomes](evidence/P1_HOSTED_CI_2026-10-21.json).
+This is Linux build/contract evidence, not deployed or operational acceptance.
 
 The [local Gitleaks scan](evidence/P1_SECRET_SCAN_2026-10-21.json) checks tracked/current
 new files with default rules, 100% redaction and inline allow-comments disabled.

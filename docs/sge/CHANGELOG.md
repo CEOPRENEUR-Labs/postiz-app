@@ -24,6 +24,12 @@ plus unresolved auth/token, license and operational gates. Triage/remediation is
 the next bounded package before exposed service or real credentials. No deployment,
 provider/account connection or publication occurred; hosted CI is checked separately.
 
+GitHub verification completed for `00e8463`: the SGE baseline workflow (58 tests,
+types/lint, Prisma and full build), inherited full build and CodeQL all passed.
+Recorded their exact commit, run URLs and step outcomes in the
+[hosted CI receipt](evidence/P1_HOSTED_CI_2026-10-21.json). This confirms P1's
+technical baseline on Linux as well; the release stop above remains unchanged.
+
 Details and verification limits: [BASELINE](BASELINE.md), [SESSION](SESSION.md).
 
 ## 2026-10-20 — Own fork and integration plan

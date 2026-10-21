@@ -46,7 +46,15 @@ needs triage, and affected shipped packages must be repaired before exposure or
 real tokens. Auth/token protection, editor/font rights, source offer, container
 packaging, runtime/recovery and real account acceptance remain open.
 
-Hosted CI is a separate remote check after push. No deployment, account connection,
+Separately verified after push on `00e8463a0ce07707a9765074899e95f2bddab433`:
+GitHub's SGE baseline (58 tests, types/lint, Prisma and full build), inherited
+full build and CodeQL all completed successfully. The
+[hosted receipt](evidence/P1_HOSTED_CI_2026-10-21.json) records exact runs and steps.
+This closes the hosted technical baseline check, not security/operating release.
+Independent review of this closing documentation: 9.3/10; all run/job metadata
+and both hosted log hashes matched. No further correction was required.
+
+No deployment, account connection,
 platform token, publication, DB startup/migration, paid AI, mail or billing change
 occurred. The unrelated dirty Labs checkout remains untouched.
 

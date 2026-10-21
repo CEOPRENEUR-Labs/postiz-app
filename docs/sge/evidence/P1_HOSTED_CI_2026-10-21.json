@@ -1,0 +1,253 @@
+{
+  "checked_date": "2026-10-21",
+  "source_commit": "00e8463a0ce07707a9765074899e95f2bddab433",
+  "scope": "GitHub Actions on ubuntu-latest; build and baseline contracts, not deployed/runtime/provider/security acceptance",
+  "node": "22.22.3",
+  "pnpm": "10.6.1",
+  "tests": {
+    "files": 3,
+    "cases": 58,
+    "failed": 0
+  },
+  "runs": [
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "00e8463a0ce07707a9765074899e95f2bddab433",
+      "html_url": "https://github.com/CEOPRENEUR-Labs/postiz-app/actions/runs/39582558607",
+      "id": 39582558607,
+      "name": "SGE fork baseline",
+      "run_attempt": 1,
+      "run_started_at": "2026-10-21T10:10:00Z",
+      "status": "completed",
+      "updated_at": "2026-10-21T10:17:23Z",
+      "jobs": [
+        {
+          "completed_at": "2026-10-21T10:17:22Z",
+          "conclusion": "success",
+          "name": "verify",
+          "started_at": "2026-10-21T10:10:03Z",
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Install locked dependencies without lifecycle hooks",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Generate the pinned Prisma client without a database",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Check baseline types",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Lint baseline tests",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actual contract tests",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Build frontend, backend and orchestrator",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "status": "completed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "00e8463a0ce07707a9765074899e95f2bddab433",
+      "html_url": "https://github.com/CEOPRENEUR-Labs/postiz-app/actions/runs/39582558477",
+      "id": 39582558477,
+      "name": "Build",
+      "run_attempt": 1,
+      "run_started_at": "2026-10-21T10:10:00Z",
+      "status": "completed",
+      "updated_at": "2026-10-21T10:16:20Z",
+      "jobs": [
+        {
+          "completed_at": "2026-10-21T10:16:20Z",
+          "conclusion": "success",
+          "name": "build (22.22.3)",
+          "started_at": "2026-10-21T10:10:03Z",
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Use Node.js 22.22.3",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Install pnpm",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Get pnpm store directory",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Install dependencies",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Build",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Install pnpm",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Use Node.js 22.22.3",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "status": "completed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "00e8463a0ce07707a9765074899e95f2bddab433",
+      "html_url": "https://github.com/CEOPRENEUR-Labs/postiz-app/actions/runs/39582558458",
+      "id": 39582558458,
+      "name": "Code Quality Analysis",
+      "run_attempt": 1,
+      "run_started_at": "2026-10-21T10:10:00Z",
+      "status": "completed",
+      "updated_at": "2026-10-21T10:12:17Z",
+      "jobs": [
+        {
+          "completed_at": "2026-10-21T10:12:17Z",
+          "conclusion": "success",
+          "name": "Analyze (javascript-typescript)",
+          "started_at": "2026-10-21T10:10:02Z",
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Checkout repository",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Initialize CodeQL",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Perform CodeQL Analysis",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Perform CodeQL Analysis",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Initialize CodeQL",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Checkout repository",
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "status": "completed"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "log_sha256": {
+    "hosted-baseline.log": "0b613a627e1c19569eb9431f143e8f08a65e56d0a0acb4b24d0190ccb2a2c1f9",
+    "hosted-build.log": "2edffaf1c82b80040f21402e84ee248241406a7399981f937cbba13593afabef"
+  },
+  "release_gate": "BLOCKED: dependency advisories, auth/token protection, licensing and operating acceptance remain unresolved"
+}

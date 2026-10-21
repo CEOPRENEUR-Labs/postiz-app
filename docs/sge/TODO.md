@@ -10,7 +10,8 @@ Updated: 2026-10-21. Scope and acceptance: [integration plan](INTEGRATION_PLAN.m
 - [ ] Repair or prove absence of affected dependencies in the selected text-only
   artifact; avoid blindly applying major overrides across unused upstream features.
 - [ ] Rebuild, run relevant regressions and repeat the audit after each bounded fix.
-- [ ] Confirm hosted fork CI separately from the accepted local baseline.
+- [x] Confirm hosted fork CI separately: baseline, full build and CodeQL passed
+  on `00e8463`; [exact run evidence](evidence/P1_HOSTED_CI_2026-10-21.json).
 - [ ] Confirm GitHub's newly enabled scanning has completed; the local Gitleaks
   check covers the current tree, not full upstream history.
 

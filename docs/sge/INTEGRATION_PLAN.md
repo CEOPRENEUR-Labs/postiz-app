@@ -1,6 +1,6 @@
 # Postiz as the SGE publishing service
 
-Updated: 2026-10-21. Status: P1 technical baseline accepted locally; release blocked.
+Updated: 2026-10-21. Status: P1 technical baseline accepted locally and on GitHub; release blocked.
 
 This document is the canonical plan for this fork. [ROADMAP](ROADMAP.md)
 tracks order, [TODO](TODO.md) tracks open work, [SESSION](SESSION.md) records
@@ -112,7 +112,8 @@ write paths, failure behavior, and gates in Labs `SYSTEM.md` with implementation
 - ACCEPTED as a technical baseline: [P1 inventory and checks](BASELINE.md).
   Node 22.22.3, frozen offline install, ordinary offline Prisma generation,
   all 58 tests, narrow lint/types and the complete three-app build passed.
-  Independent technical review: 9.1/10. Hosted CI remains a separate check.
+  Independent technical review: 9.1/10. GitHub's baseline, full build and CodeQL
+  also passed on `00e8463`; [exact hosted evidence](evidence/P1_HOSTED_CI_2026-10-21.json).
 - BLOCKED for release: the production dependency audit reports 15 critical
   entries. Before P2 exposes a service or accepts real credentials, triage and
   repair affected shipped dependencies. Auth/token, license and operating gates
