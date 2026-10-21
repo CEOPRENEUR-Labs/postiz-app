@@ -8,7 +8,8 @@ Updated: 2026-10-21. Canonical scope: [integration plan](INTEGRATION_PLAN.md).
 | P1 | Pinned runtime, reproducible baseline, maintenance/license inventory | Technical baseline accepted, 9.1/10; 58 tests/full build pass locally and on GitHub; CodeQL passed on `00e8463` |
 | P1a | Critical dependency remediation and regression gate | Accepted locally, 9.0/10: zero critical in repeated CLI/bulk audits, 82 tests, full build and localhost HTTP smoke pass; hosted checks separate |
 | P1b | Shared HTTP dependency repair | Accepted at 8.5/10: Axios 1.20.0/redirects 1.16.1, 98 tests/full build locally; both hosted workflows passed on `11b58ca`; GitHub critical alerts 0 open/20 fixed |
-| Release stop | High-severity dependency triage and other recorded gates | BLOCKED: 136 high production audit entries after P1b plus auth/license/operating acceptance before exposure/real tokens |
+| P1c | Next framework security patch | Local acceptance 8.7/10: Next/env/SWC 16.3.8, 127 tests/full build and image/MCP HTTP checks; exact-revision hosted gate is separate |
+| Release stop | High-severity dependency triage and other recorded gates | BLOCKED: 135 high production audit entries after P1c plus auth/license/operating acceptance before exposure/real tokens |
 | P2 | Isolated service, operations and source-offer proof | Not started; dependency/security/license gates and hosting/cost decisions open |
 | P3 | Offline server-side, tenant-bound draft adapter | Not started |
 | P4 | One authorized own-channel draft, no publication | Not started; account/scopes and environment open |

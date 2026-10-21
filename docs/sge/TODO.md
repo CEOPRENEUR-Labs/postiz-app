@@ -7,7 +7,7 @@ Updated: 2026-10-21. Scope and acceptance: [integration plan](INTEGRATION_PLAN.m
 - [x] Verify the final P1 build (`065236b`) on GitHub: success.
 - [x] Patch the dependency versions behind 20 historical critical alert instances.
 - [x] Refresh GitHub graph and confirm all 20 critical alerts fixed (0 open, none dismissed).
-- [x] Add package-boundary and compatibility regressions; 82 tests and narrow types/lint pass.
+- [x] Add P1a package-boundary and compatibility regressions; 82 tests and narrow types/lint pass.
 - [x] Repeat production/all-lock audits: zero critical; retain the other severity findings.
 - [x] Complete the final three-app build, localhost HTTP smoke and independent review (9.0/10).
   Hosted results are a separate exact-revision check in the
@@ -15,11 +15,16 @@ Updated: 2026-10-21. Scope and acceptance: [integration plan](INTEGRATION_PLAN.m
 - [x] Repair Axios/redirect dependencies with before/after probes and 16 regression cases.
 - [x] Complete P1b full build and independent review (8.5/10).
 - [x] Verify both hosted P1b workflows on exact code `11b58ca`: success.
-- [ ] Triage 136 remaining high production audit entries before any exposed service or real token.
-  Next: remaining Next image-optimization advisory and selected artifact egress paths.
+- [x] Verify the closing P1b documentation build on `4d13fe3`: success.
+- [x] Patch Next/env/eight SWC resolutions to 16.3.8 without widening image access.
+- [x] Complete 29 new Next cases (127 total), types/lint, full build and real local
+  image/MCP HTTP checks; independent review 8.7/10.
+- [ ] Triage 135 remaining high production audit entries before any exposed service or real token.
+  Distinguish version matches from shipped/reachable paths; do not infer exploitability.
+- [ ] Triage the newly reported moderate Vitest-Mocker advisory in the unchanged graph.
+  Per-revision P1c delivery status is authoritative in the linked GitHub workflows.
 - [ ] Make inherited staging automation appropriate for this fork; its SSH preflight
   fails without a usable deploy key. Do not add production credentials as a workaround.
-  Distinguish version matches from shipped/reachable paths; do not infer exploitability.
 - [ ] Repair or prove absence of affected dependencies in the selected text-only
   artifact, with focused regressions and fresh audits after bounded changes.
 - [ ] Confirm GitHub's newly enabled history secret scan has completed; the local
@@ -29,6 +34,7 @@ Updated: 2026-10-21. Scope and acceptance: [integration plan](INTEGRATION_PLAN.m
 
 - [ ] Confirm hosting/region/resource envelope, monthly cost and operator owner.
 - [ ] Choose approved staging and test backup/restore, deletion, rollback and stop.
+- [ ] Reconcile Dockerfile.dev Node 22.20 with root >=22.22.3 and prove the container separately.
 - [ ] Validate the concrete AGPL combined-work boundary before code integration.
 - [ ] Resolve Polotno/commercial editor and font rights or prove those components
   are absent from the actual first artifact; audit its remaining dependency licenses.

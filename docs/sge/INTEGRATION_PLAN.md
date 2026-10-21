@@ -235,6 +235,48 @@ and follow-redirects 1.16.1, without Happy DOM or Tinypool. The inherited
 scheduled staging resolver fails its SSH preflight without a usable deploy key (run 39662155808), independently of builds.
 Do not provision production secrets to make that inherited job pass.
 
+### P1c — Patch Next without widening the image allowlist
+
+FACT — The closing documentation build on `4d13fe3` succeeded:
+[run 39666258315](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/runs/39666258315).
+Updated the direct Next pin and existing override from 16.3.6 to 16.3.8. The
+regenerated lock changes only Next, `@next/env` and all eight platform SWC
+versions. React, application configuration, styling/content, authentication,
+database, provider and Temporal implementation remain unchanged.
+
+The [upstream image advisory](https://github.com/vercel/next.js/security/advisories/GHSA-cjq9-62q9-8jv4)
+requires an attacker-controlled allowlisted remote image. The inspected source
+and built application have empty image domains/remotePatterns and local-IP
+access disabled. The active app SSRF prerequisite is absent; this is a framework
+dependency repair, not evidence of an exploited Postiz route. Other cache/metadata
+advisories lack their required app routes/cache configuration. The development
+MCP endpoint is enabled by framework defaults and was checked separately.
+
+Accepted locally at 8.7/10 after fresh independent read-only review: no concrete
+remaining bypass/regression. Twenty-nine new boundary cases bring the suite to
+127 passing tests. Types/lint, ordinary offline Prisma generation and the full
+three-app build pass (292.60 seconds). The simulated before/after probe changes
+from two DNS resolutions to one checked address set reused by the connection.
+Tests cover private/mixed answers, aliases/families, redirect checks, pool keys,
+compression/decoded caps, status/empty/reset/timeout behavior and ordinary inputs.
+They do not prove real remote sockets, TLS/SNI or connection reuse.
+
+Real local HTTP checks: built login and local PNG optimization return 200;
+unconfigured remote/protocol-relative/private image URLs and invalid width
+return 400. The development Webpack MCP check rejects a foreign Origin with 403
+and accepts same-origin initialization with 200. These are standalone component
+checks with only loopback allowed, not Labs/Netlify/deployed production parity.
+Both servers are stopped; no provider, credential or publication was used.
+
+Fresh pnpm production audit: 0 critical / 135 high / 201 moderate / 35 low;
+all dependencies: 0 critical / 140 high / 202 moderate / 35 low. All six matching
+Next advisory records disappear (1 high, 4 moderate, 1 low). A newly reported
+moderate `@vitest/mocker` advisory remains in the unchanged graph; no ignore or
+dismissal. JSON audits still exit 1 for remaining findings; the unchanged plain
+critical CI command exits 0. Exact-revision hosted checks remain an independent
+publishing gate in the [baseline workflow](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/workflows/sge-baseline.yml)
+and [Build workflow](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/workflows/build.yml).
+
 ### P2 — Define and prove isolated service operation
 
 - Propose hosting, region, estimated monthly cost, resource limits, data retention,
@@ -326,17 +368,17 @@ Do not provision production secrets to make that inherited job pass.
 
 ## Current next gate
 
-P1b is accepted at 8.5/10: 98 tests, types/lint and full build locally; both
-[SGE baseline](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/runs/39664881466)
-and [Build](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/runs/39664881420)
-passed on exact code revision `11b58cae57d164d4d5a945959a31f5d114341296`.
-GitHub graph refresh confirms all 20 historical critical alerts fixed.
-Continue bounded high-severity triage (136 production
-entries), starting with Next's remaining image-optimization advisory and the
-selected artifact's egress paths. Keep license, token, role, trusted-proxy,
-container and recovery gates in P2. The inherited staging automation and unverified
-history secret-scan state need separate fork-specific follow-up.
-No production or account connection is authorized here.
+P1c has local technical acceptance at 8.7/10: 127 tests, types/lint, full build,
+DNS-boundary comparison and real local image/MCP HTTP checks. Delivery checks
+are tracked against the exact pushed revision in the linked GitHub workflows;
+local acceptance does not substitute for those checks or deployment acceptance.
+Continue bounded high-severity triage (135 production entries) and the selected
+artifact's application egress paths. Keep the newly reported Vitest-Mocker
+advisory visible; no unrelated package update is folded into P1c.
+License, token, role, trusted-proxy, container and recovery gates remain in P2.
+The inherited staging automation and unverified history secret scan need separate
+follow-up. `Dockerfile.dev` still uses Node 22.20 against root's >=22.22.3 engine;
+container compatibility remains open. No production/account connection is authorized.
 
 ## References
 

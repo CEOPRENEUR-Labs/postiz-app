@@ -1,5 +1,53 @@
 # SGE publishing session
 
+## 2026-10-21 — P1c Next security update
+
+FACT — Starting Main `4d13fe35f8bf31a8281876195d56dc80b9462861` was clean.
+The [documentation build 39666258315](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/runs/39666258315)
+passed. Worked on isolated `codex/sge-next-security`; unrelated Labs work remains
+untouched. A fresh read-only investigator and parent traced config, actual image
+callers, all copies/peers, the six advisory prerequisites and affected behavior.
+
+Official npm 16.3.8 tarball SHA-512 matched registry metadata. Frozen installation
+with hooks disabled updates only Next/env/eight SWC package versions; installed
+Next/env/platform SWC all resolve 16.3.8. React and app configuration are unchanged.
+The source/build contain no remote image allowlist or affected cache/metadata
+routes, so no active app SSRF or cache exploit is inferred from package matches.
+
+The actual Next image-fetch function with simulated transport changes from a
+second, private DNS result before patch to one checked public set after patch.
+No DNS/socket or real target was contacted by that probe. Twenty-nine additional
+cases cover aliases/families, private/mixed answers, redirect revalidation,
+protected/permissive pool separation, compression/decoded caps and error behavior.
+All 127 tests, narrow types/lint, ordinary offline Prisma generation and complete
+frontend/backend/orchestrator build pass; build 292.60 seconds, exit 0.
+Overloaded DNS test fixtures were corrected explicitly without any/ts-ignore or
+turning off type checks. No owning application source needed a compatibility fix.
+
+The built standalone server served login and optimized a real local PNG (200),
+rejected unconfigured remote/private/protocol-relative URLs and invalid width
+(400). The local Webpack dev server rejected foreign-origin MCP initialization
+(403) and accepted same-origin initialization (200), with no MCP tool invocation.
+Servers stopped; no source-generation diff remained. Sanitized Node22.22.3/pnpm
+10.6.1 processes denied user-home access; build/types/lint/Prisma and simulated
+probe denied network, HTTP smoke/tests allowed loopback only. This has no Labs
+Netlify/deployed env/model/flag parity and is not production acceptance.
+
+Fresh production JSON audit: 0 critical/135 high/201 moderate/35 low;
+full JSON audit: 0 critical/140 high/202 moderate/35 low. Both exit 1 for
+remaining findings; exact plain critical CI gate exits 0. Six Next records
+(1 high,4 moderate,1 low) disappear. Newly reported moderate Vitest-Mocker remains
+without a package change. No ignore or dismissal.
+
+Fresh read-only reviewer: no actionable surviving bypass/regression, 8.7/10.
+It inspected source/configuration, graph and eight installed critical-source
+integrity matches; it executed no dependency code/tests. The parent owns runtime
+checks. HTTPS/pool simulations do not prove native socket reuse or TLS/SNI.
+Other cache/metadata modes without app prerequisites were not dynamically tested.
+Container/native and actual production acceptance remain open, including the
+existing Dockerfile.dev Node22.20 vs root>=22.22.3 discrepancy. Exact-SHA hosted
+results are retained separately at delivery; local checks do not replace them.
+
 ## 2026-10-21 — P1b HTTP dependency repair
 
 FACT — Continued on clean isolated `codex/sge-http-dependencies` from `fec83dd`.

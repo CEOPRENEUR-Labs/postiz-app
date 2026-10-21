@@ -2,7 +2,8 @@
 
 This is the historical P1 evidence. For subsequent dependency versions and gates,
 see [P1a](INTEGRATION_PLAN.md#p1a--remove-known-critical-dependency-advisories) and
-[P1b in the current plan](INTEGRATION_PLAN.md#p1b--repair-the-shared-http-dependency-boundary).
+[P1b](INTEGRATION_PLAN.md#p1b--repair-the-shared-http-dependency-boundary) and
+[P1c in the current plan](INTEGRATION_PLAN.md#p1c--patch-next-without-widening-the-image-allowlist).
 
 Updated: 2026-10-21. Scope: source inventory and isolated build/test acceptance.
 This is not a deployment, complete security audit, or provider acceptance.

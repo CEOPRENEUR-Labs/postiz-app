@@ -1,5 +1,27 @@
 # SGE publishing changes
 
+## 2026-10-21 — Next security update
+
+Verified the previous documentation build (`4d13fe3`, run 39666258315): success.
+Pinned Next and its existing override at 16.3.8, with matching env/eight SWC
+versions. No application configuration, UI/content, provider, authentication,
+database or Temporal changes. The current built app has no remote-image allowlist;
+the image advisory's active SSRF prerequisite is absent in this inspected state.
+
+Added 29 actual Next boundary regressions (127 total). Before/after simulated
+transport checks verify DNS pinning; compatibility covers redirects, compression,
+body limits and errors. Types/lint, offline Prisma and the full build pass.
+Built local login/PNG return 200; disallowed remote images return 400. Local dev
+MCP rejects a foreign Origin (403) and accepts same-origin initialization (200).
+Independent review: 8.7/10. Real remote sockets/TLS/reuse and production parity
+remain unverified; hosted CI is checked separately for the pushed revision.
+
+All six matching Next advisories disappear. Production audit: 0 critical / 135
+high / 201 moderate / 35 low. A newly reported moderate Vitest-Mocker advisory
+in the unchanged graph remains open. Release/security/operating gates remain
+BLOCKED; no ignore/dismissal, deploy or provider action.
+See [P1c](INTEGRATION_PLAN.md#p1c--patch-next-without-widening-the-image-allowlist).
+
 ## 2026-10-21 — Shared HTTP dependency repair
 
 Updated Axios 1.19.0 → 1.20.0 and its resolved follow-redirects 1.16.0 → 1.16.1,
