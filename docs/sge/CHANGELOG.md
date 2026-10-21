@@ -1,5 +1,27 @@
 # SGE publishing changes
 
+## 2026-10-21 — Shared HTTP dependency repair
+
+Updated Axios 1.19.0 → 1.20.0 and its resolved follow-redirects 1.16.0 → 1.16.1,
+covering every existing SDK consumer. The direct floor, bounded Axios override
+and scoped redirect pin prevent retaining the affected copies. No application,
+provider, authentication, database or Temporal implementation changed.
+
+Four isolated before/after probes close array-header credential leakage, custom
+sensitive-header escaping, the Fetch redirect-limit bypass and inherited
+multipart visitors. Added 16 security/compatibility regressions: all 98 tests,
+baseline types/lint, ordinary offline Prisma generation and the full three-app
+build passed. Independent fresh read-only review: 8.5/10, no concrete remaining
+bypass/regression; not every optional HTTP2/proxy/gadget advisory was reproduced.
+
+Fresh production audit: 0 critical / 136 high / 204 moderate / 36 low. All 14
+selected advisory records disappear (9 high, 5 moderate); three newly reported
+Vite records remain open without changing Vite. Full audit retains 141 high;
+plain critical CI gate passes. No ignore, dismissal or secret was added.
+Release remains BLOCKED; the remaining plain-Axios media path, egress and the
+other security/license/operating gates are separate work. Exact-revision hosted
+CI follows push. See [P1b plan](INTEGRATION_PLAN.md#p1b--repair-the-shared-http-dependency-boundary).
+
 ## 2026-10-21 — Critical dependency remediation
 
 The last P1 build (`065236b`) passed. Updated the 11 critical dependency families

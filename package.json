@@ -146,7 +146,7 @@
     "accept-language": "^3.0.20",
     "array-move": "^4.0.0",
     "async-mutex": "^0.5.0",
-    "axios": "^1.19.0",
+    "axios": "^1.20.0",
     "bcrypt": "^5.1.1",
     "bottleneck": "^2.19.5",
     "bs58": "^6.0.0",
@@ -339,7 +339,9 @@
       "proxy-addr@<2.0.8": "2.0.8",
       "@mapbox/node-pre-gyp@1.0.11>tar": "7.5.22",
       "vitest@4.1.2>happy-dom": "-",
-      "shell-quote@<1.12.0": "1.12.0"
+      "shell-quote@<1.12.0": "1.12.0",
+      "axios@>=1.0.0 <1.20.0": "1.20.0",
+      "axios>follow-redirects": "1.16.1"
     },
     "onlyBuiltDependencies": [
       "bcrypt"

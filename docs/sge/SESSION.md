@@ -1,5 +1,50 @@
 # SGE publishing session
 
+## 2026-10-21 — P1b HTTP dependency repair
+
+FACT — Continued on clean isolated `codex/sge-http-dependencies` from `fec83dd`.
+Main's Build (39628513730) and SGE baseline (39628513660) passed at that revision.
+The inherited staging resolver (39662155808) fails at SSH preflight with an
+unusable key; that is separate from build/test health. GitHub still lists 20
+historical critical alerts; dependency-graph refresh/closure is not confirmed.
+
+A fresh pre-patch investigator and the parent traced the shared Axios consumers,
+actual lock/installed copies and direct media/provider callers. Updated only
+Axios to 1.20.0 and follow-redirects to 1.16.1 with targeted dependency constraints.
+The generated lock changes only those package versions; pnpm also deduplicates
+three edges to existing form-data/hasown versions. All eight transitive Axios
+consumers resolve the patched copy. No application or Temporal history changes.
+
+Four before/after probes reproduce then close package-level credential leakage,
+Fetch redirect-limit bypass and inherited multipart visitor behavior. Sixteen
+new tests preserve ordinary redirects, streamed multipart, arraybuffer/stream
+reads, DNS hooks, abort classification and provider error responses. All 98 tests,
+baseline types/lint, offline Prisma generation and the complete three-app build
+passed (167.52 seconds, exit 0). Installs disabled hooks. Initial frozen install
+was attempted before lock resolution completed and correctly refused the config
+mismatch; replay after resolution passed without weakening frozen enforcement.
+
+Node 22.22.3/pnpm 10.6.1; sanitized environment with user-directory access denied.
+Build/types/lint/Prisma denied network; HTTP tests/probes allowed only loopback.
+Parity: standalone package/local build, no Labs Netlify transport/deployed config
+or provider accounts. These are engine/component checks, not production evidence.
+
+Fresh production JSON audit: 0 critical, 136 high, 204 moderate, 36 low;
+full JSON audit: 0 critical, 141 high, 205 moderate, 36 low. Both return 1 for
+remaining findings. The unchanged plain critical CI command returns 0. All 14
+selected records (9 high, 5 moderate) disappear; newly reported Vite records
+(2 moderate, 1 low) explain the other count changes. No ignore/dismissal.
+Current-tree Gitleaks initially checked 1,054 files: the same 24 checksum metadata
+findings, zero unresolved, no suppression; no history scan is claimed.
+
+Fresh independent read-only review: no actionable bypass/regression, 8.5/10.
+Reviewer traced source/exported Node and browser builds, copies and consumer
+contracts; no runtime tests were successfully run by the reviewer. The parent
+owns the runtime checks above. HTTP2 controls/session failures, CIDR/proxy ReDoS
+and several other gadgets were not individually reproduced. Application SSRF,
+trusted proxies, token/tenant, license, container/native and operating acceptance
+remain open. Hosted verification must refer to the pushed revision separately.
+
 ## 2026-10-21 — P1a critical dependency repair
 
 FACT — Verified the final P1 documentation build on `065236b`: GitHub run

@@ -15,7 +15,8 @@ based on upstream commit `651876e24317c2d8e717262cf98267ec6f699180`.
 The original [LICENSE](../../LICENSE), copyright notices, and ancestry remain.
 
 FACT — P0 created the fork and documentation. The owner then requested P1 and
-repair of its build/test failures, then critical dependency remediation. This does
+repair of its build/test failures, critical dependency remediation and continued
+bounded dependency repair. This does
 not authorize hosting purchases,
 account connections, credential changes, social publication, deployments,
 billing changes, or activation of existing SGE gates. No Labs application code
@@ -190,6 +191,47 @@ handling also needs a separate trusted-proxy review: updating proxy-addr does no
 change that application code. Native bcrypt loading and Temporal history replay
 are not proven by archive/codec tests.
 
+### P1b — Repair the shared HTTP dependency boundary
+
+FACT — Axios 1.20.0 and its resolved follow-redirects 1.16.1 replace the only
+installed/locked copies of 1.19.0 and 1.16.0. The direct Axios floor and bounded
+1.x override cover its SDK consumers; the scoped redirect pin is necessary
+because Axios itself still permits 1.16.0. All existing consumer ranges admit
+the selected versions. No application, provider or Temporal implementation changes.
+
+Four isolated before/after probes reproduce then close array-header credential
+leakage, custom sensitive-header escaping, Fetch `maxRedirects: 0` bypass and the
+inherited multipart visitor gadget. Sixteen added tests also preserve same-origin
+authorization, streams/arraybuffers, streamed multipart, explicit visitors, custom
+HTTP-agent DNS lookup, cancellation and provider error data. All 98 tests,
+baseline types/lint and ordinary offline Prisma generation pass. The full
+frontend/backend/orchestrator build passed in 167.52 seconds. Independent fresh
+read-only review found no actionable bypass/regression: 8.5/10, accepted within
+this package scope. Optional HTTP2 session/control failures, CIDR/proxy ReDoS
+and other prototype gadgets were inspected through source/version coverage,
+not individually reproduced. This is a documented validation limit, not proof
+of complete HTTP security.
+
+Fresh pnpm production audit: 0 critical, 136 high, 204 moderate, 36 low;
+all dependencies: 0 critical, 141 high, 205 moderate, 36 low. The 14 selected
+advisory records (9 high, 5 moderate) disappear. Three newly reported Vite records
+(2 moderate, 1 low) remain open; no Vite version was changed. JSON audits return
+1 for remaining findings; the unchanged plain critical CI command returns 0.
+Only the two target package versions change; pnpm also deduplicates three edges
+to already-locked form-data/hasown versions. No advisory ignore or dismissal.
+
+These are package/component checks: optional Fetch/HTTP2 modes, prior prototype
+pollution and deployed proxy settings have differing prerequisites. No active
+application exploit is inferred from a version match. Existing plain-Axios media
+conversion in `posts.service.ts` remains a separate SSRF review item. This update
+does not establish safe egress, token/tenant isolation or production acceptance.
+
+FACT — On the starting Main `fec83dd`, the Build and SGE baseline workflows both
+passed. GitHub still lists 20 historical critical alerts with stale graph data;
+closure is not confirmed. The inherited scheduled staging resolver fails its SSH
+preflight without a usable deploy key (run 39662155808), independently of builds.
+Do not provision production secrets to make that inherited job pass.
+
 ### P2 — Define and prove isolated service operation
 
 - Propose hosting, region, estimated monthly cost, resource limits, data retention,
@@ -281,13 +323,15 @@ are not proven by archive/codec tests.
 
 ## Current next gate
 
-P1a is accepted locally at 9.0/10. Check its exact revision in the
+P1b is accepted locally at 8.5/10 (98 tests, types/lint and full build). Check
+the accepted revision in the
 [GitHub baseline workflow](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/workflows/sge-baseline.yml)
-before use. Next, triage high-severity production advisories and repair or
-demonstrably omit affected packages from the proposed
-text-only service artifact. Record tests and fresh audits per bounded change.
-License, token, role, trusted-proxy and egress gates remain part of the isolated
-P2 operating proposal. No production or account connection is authorized here.
+separately after push. Continue bounded high-severity triage (136 production
+entries), starting with Next's remaining image-optimization advisory and the
+selected artifact's egress paths. Keep license, token, role, trusted-proxy,
+container and recovery gates in P2. The inherited staging automation and stale
+Dependabot/history-scan state need separate fork-specific follow-up.
+No production or account connection is authorized here.
 
 ## References
 

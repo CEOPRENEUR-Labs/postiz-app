@@ -1,7 +1,8 @@
 # P1: Postiz fork baseline
 
 This is the historical P1 evidence. For subsequent dependency versions and gates,
-see [P1a in the current plan](INTEGRATION_PLAN.md#p1a--remove-known-critical-dependency-advisories).
+see [P1a](INTEGRATION_PLAN.md#p1a--remove-known-critical-dependency-advisories) and
+[P1b in the current plan](INTEGRATION_PLAN.md#p1b--repair-the-shared-http-dependency-boundary).
 
 Updated: 2026-10-21. Scope: source inventory and isolated build/test acceptance.
 This is not a deployment, complete security audit, or provider acceptance.
@@ -113,7 +114,10 @@ was then replayed offline with Node 22; final checks use 22.22.3.
    and an external registry request fails. These probes passed. No service,
    database, queue, workflow worker, mailer, payment client, or provider is started.
 5. Replay step 1 with `--offline`; repeat normal Prisma generation offline.
-6. Run `pnpm run typecheck:sge-baseline`, `pnpm run lint:sge-baseline`,
+6. P1b HTTP regression tests additionally need loopback bind/connect access;
+   keep external egress denied. They use ephemeral local servers and synthetic
+   data, then close all servers. No provider service is contacted.
+7. Run `pnpm run typecheck:sge-baseline`, `pnpm run lint:sge-baseline`,
    `pnpm test`, and `pnpm run build` inside that same sandbox.
 
 Commands alone do not enforce isolation. A later runner must provide an

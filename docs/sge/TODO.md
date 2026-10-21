@@ -5,13 +5,20 @@ Updated: 2026-10-21. Scope and acceptance: [integration plan](INTEGRATION_PLAN.m
 ## Completed package and next security work
 
 - [x] Verify the final P1 build (`065236b`) on GitHub: success.
-- [x] Resolve the 20 critical alert instances in the targeted dependency inventory.
+- [x] Patch the dependency versions behind 20 historical critical alert instances.
+- [ ] Confirm GitHub graph refresh and actual alert closure; 20 remain open at P1b start.
 - [x] Add package-boundary and compatibility regressions; 82 tests and narrow types/lint pass.
 - [x] Repeat production/all-lock audits: zero critical; retain the other severity findings.
 - [x] Complete the final three-app build, localhost HTTP smoke and independent review (9.0/10).
   Hosted results are a separate exact-revision check in the
   [baseline workflow](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/workflows/sge-baseline.yml).
-- [ ] Triage 145 high production audit entries before any exposed service or real token.
+- [x] Repair Axios/redirect dependencies with before/after probes and 16 regression cases.
+- [x] Complete P1b full build and independent review (8.5/10).
+- [ ] Verify P1b exact-revision hosted CI after push.
+- [ ] Triage 136 remaining high production audit entries before any exposed service or real token.
+  Next: remaining Next image-optimization advisory and selected artifact egress paths.
+- [ ] Make inherited staging automation appropriate for this fork; its SSH preflight
+  fails without a usable deploy key. Do not add production credentials as a workaround.
   Distinguish version matches from shipped/reachable paths; do not infer exploitability.
 - [ ] Repair or prove absence of affected dependencies in the selected text-only
   artifact, with focused regressions and fresh audits after bounded changes.
@@ -27,6 +34,8 @@ Updated: 2026-10-21. Scope and acceptance: [integration plan](INTEGRATION_PLAN.m
   are absent from the actual first artifact; audit its remaining dependency licenses.
 - [ ] Implement and verify the exact-release source offer.
 - [ ] Review custom forwarded-header handling against the selected trusted proxy.
+- [ ] Review plain-Axios media conversion and prove all selected outbound paths
+  enforce the intended URL/DNS/redirect boundary; dependency patches alone do not.
 - [ ] Establish token storage/key rotation/backup controls and prove role/tenant
   isolation independently of billing configuration before real credentials.
 - [ ] Choose and prove Labs account/tenant to Postiz organization/channel mapping.
