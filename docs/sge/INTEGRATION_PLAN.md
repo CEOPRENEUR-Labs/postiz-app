@@ -15,7 +15,8 @@ based on upstream commit `651876e24317c2d8e717262cf98267ec6f699180`.
 The original [LICENSE](../../LICENSE), copyright notices, and ancestry remain.
 
 FACT — P0 created the fork and documentation. The owner then requested P1 and
-repair of its build/test failures. This does not authorize hosting purchases,
+repair of its build/test failures, then critical dependency remediation. This does
+not authorize hosting purchases,
 account connections, credential changes, social publication, deployments,
 billing changes, or activation of existing SGE gates. No Labs application code
 is copied into this public repository.
@@ -114,10 +115,10 @@ write paths, failure behavior, and gates in Labs `SYSTEM.md` with implementation
   all 58 tests, narrow lint/types and the complete three-app build passed.
   Independent technical review: 9.1/10. GitHub's baseline, full build and CodeQL
   also passed on `00e8463`; [exact hosted evidence](evidence/P1_HOSTED_CI_2026-10-21.json).
-- BLOCKED for release: the production dependency audit reports 15 critical
-  entries. Before P2 exposes a service or accepts real credentials, triage and
-  repair affected shipped dependencies. Auth/token, license and operating gates
-  also remain. Technical acceptance does not waive any of these gates.
+- Historical P1 release stop: the initial production audit reported 15 critical
+  entries. P1a below remediates that dependency inventory; auth/token, license,
+  high-severity dependency and operating gates still block release. Technical
+  acceptance does not waive those gates.
 - Review pinned architecture, all relevant repo instructions, scripts, workflows,
   lockfile, licenses, auth, token storage, outbound calls, and default features.
 - Resolved the Node discrepancy: root engines, Volta and both build workflows
@@ -133,6 +134,61 @@ write paths, failure behavior, and gates in Labs `SYSTEM.md` with implementation
   activity histories; version incompatible workflows as upstream requires.
 - Accept with reproducible build/test evidence, dependency/license review,
   identified maintenance owner, and a versioned dependency/container inventory.
+
+### P1a — Remove known critical dependency advisories
+
+FACT — The last P1 documentation build on `065236b` passed on GitHub
+([run](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/runs/39583938450)).
+The owner then authorized fixing the critical dependency findings. Fresh GitHub
+metadata identified 20 alert instances across 11 package families; duplicate
+manifest/lock alerts are not separate exploitable application paths.
+
+The accepted local change updates only dependency resolution, the test runner configuration,
+focused regression tests and the fork CI gate. It does not change application,
+authentication, database or Temporal workflow code.
+
+| Package boundary | Accepted resolution |
+| --- | --- |
+| Next | 16.3.1 → 16.3.6, direct pin and existing override together |
+| Vitest/UI/coverage | Aligned at 4.1.2; native pool removes Tinypool; Node types align with Node 22 |
+| Pigment/Happy DOM | Remove unused Pigment and its old transform graph; explicitly omit Vitest's unused optional Happy DOM peer |
+| Legacy request multipart | Scoped `request>form-data` 2.5.5; preserve other form-data major versions |
+| Protobuf | 7.5.5 for all existing 7.x consumers, including Temporal |
+| Native installer Tar | Scoped to node-pre-gyp 1.0.11: Tar 7.5.22; bcrypt and canvas versions remain unchanged |
+| Other targeted patches | proxy-addr 2.0.8, Handlebars 4.7.10, Piscina 4.9.4, shell-quote 1.12.0 |
+
+The first shell-quote candidate, 1.8.4, was rejected by the repeat audit: it fixed
+one advisory but introduced exposure to a newer critical comment/token advisory.
+1.12.0 addresses both. No advisory was dismissed and no audit ignore was added.
+
+Verified locally: 82 tests (24 added security/compatibility cases), baseline
+lint/types and the complete three-app build passed (429.03 seconds). The local
+HTTP smoke returned 200 for `/auth/login` and 400 for invalid image parameters;
+only loopback traffic was allowed and the test server was stopped afterward.
+Independent patch review: 9.0/10, no concrete remaining bypass/regression.
+Both CLI audits contain zero critical findings. The production JSON audit
+still reports 145 high, 207 moderate and 35 low entries; the all-dependency JSON
+report has 150 high, 208 moderate and 35 low. JSON mode exits 1 for these remaining
+findings. The exact CI command, `pnpm audit --audit-level critical`, separately
+passed with exit 0. It runs before installation and includes development packages;
+registry errors are not ignored. Independent npm bulk matching across all 3,899
+locked versions also found zero critical advisories; its 329 advisory records use
+a different count/scope and must not be added to the CLI totals.
+
+Six bounded package-level reproductions fail the intended security control on
+the original packages and pass after the patch: shell operators, proxy subnets,
+AST validation, multipart randomness, protobuf names and archive decompression.
+The new tests also preserve normal quoting/templates/multipart/protobuf payloads,
+Temporal's shipped schema and the installer's callback/stream/promise Tar APIs.
+This is dependency/component evidence, not proof of a live Postiz exploit or a
+production acceptance. No real provider, account, mail, AI or publication is used.
+
+BLOCKED — Release remains closed pending the high-severity inventory's reachability
+and remediation, license/source-offer, token/role/tenant protection, container/native
+installation and operating/recovery acceptance. Existing custom forwarded-header
+handling also needs a separate trusted-proxy review: updating proxy-addr does not
+change that application code. Native bcrypt loading and Temporal history replay
+are not proven by archive/codec tests.
 
 ### P2 — Define and prove isolated service operation
 
@@ -225,11 +281,13 @@ write paths, failure behavior, and gates in Labs `SYSTEM.md` with implementation
 
 ## Current next gate
 
-Triage the exact dependency advisories, starting with critical/high production
-entries, and repair or demonstrably omit affected packages from the proposed
-text-only service artifact. Record tests and a fresh audit before accepting that
-artifact. Then address license, token, role and egress gates in an isolated P2
-operating proposal. No production or account connection is authorized by this plan.
+P1a is accepted locally at 9.0/10. Check its exact revision in the
+[GitHub baseline workflow](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/workflows/sge-baseline.yml)
+before use. Next, triage high-severity production advisories and repair or
+demonstrably omit affected packages from the proposed
+text-only service artifact. Record tests and fresh audits per bounded change.
+License, token, role, trusted-proxy and egress gates remain part of the isolated
+P2 operating proposal. No production or account connection is authorized here.
 
 ## References
 

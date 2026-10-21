@@ -1,5 +1,50 @@
 # SGE publishing session
 
+## 2026-10-21 — P1a critical dependency repair
+
+FACT — Verified the final P1 documentation build on `065236b`: GitHub run
+[39583938450](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/runs/39583938450)
+succeeded. The owner authorized critical dependency repair. Worked on the clean
+isolated `codex/sge-critical-dependencies` worktree; unrelated Labs work is untouched.
+
+Updated eleven package families with the resolution boundaries in
+[the plan](INTEGRATION_PLAN.md#p1a--remove-known-critical-dependency-advisories).
+The regenerated lock removes Tinypool/Happy DOM and keeps all other targeted
+copies patched. Removed only the unused Pigment dependency; no application,
+authentication, database or Temporal workflow implementation changed.
+
+Local verification used Node 22.22.3/pnpm 10.6.1, sanitized environment and user-home
+access denied. Installs disabled lifecycle hooks. Normal Prisma 6.5 generation
+needed its official verified engine download once in the new worktree; no database
+was started or migrated. Types/lint, 82 tests and the full three-app build passed;
+build exit 0 after 429.03 seconds. The 24 added cases exercise actual packages,
+normal inputs, Temporal's shipped codec and native-installer Tar call shapes.
+Six bounded before/after probes show original package controls failing and
+patched controls succeeding. Shell text was never executed; compressed test input
+was bounded to 8 MiB. Native bcrypt loading and Temporal replay are not proven.
+
+The Next HTTP smoke allowed loopback only: `/auth/login` 200 and malformed image
+parameters 400. The server was stopped. Parity difference: standalone local Next,
+branch build, no Labs/Netlify transport or deployed provider/flag configuration;
+this is engine/component evidence, not production acceptance.
+
+Fresh pnpm JSON audits: production 0 critical/145 high/207 moderate/35 low;
+all dependencies 0 critical/150 high/208 moderate/35 low. JSON mode returns exit 1
+for remaining findings. The exact critical-only CI command without JSON returns
+exit 0. Independent registry bulk matching over all 3,899 locked versions found
+zero critical advisories (329 matching advisory records; separate counting).
+The initial shell-quote 1.8.4 candidate was rejected for a newer critical advisory
+and improved to 1.12.0. No ignore/dismissal/error-tolerance rule was added.
+
+Independent fresh read-only bypass/regression review: 9.0/10, no concrete issue.
+Current-tree Gitleaks: 1,053 files, 24 raw findings classified as the same
+localization/source checksum metadata, zero unresolved; no suppression added.
+It checked every lock/snapshot/optional edge, installed nested package identity,
+actual consumer resolution and the Tar API boundary. This is not a full security,
+native/container, provider or operating acceptance. Release remains BLOCKED by
+high-severity triage, auth/token/tenant, trusted-proxy, license and operating gates.
+Hosted runs must be checked separately for the pushed code revision.
+
 ## 2026-10-21 — P1 technical baseline and explicit release stop
 
 FACT — The owner requested P1, then explicitly requested repair of its open

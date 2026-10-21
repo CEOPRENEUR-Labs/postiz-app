@@ -5,11 +5,5 @@ export default defineConfig({
     environment: 'node',
     include: ['tests/sge-baseline/**/*.test.ts'],
     maxWorkers: 1,
-    minWorkers: 1,
-  },
-  esbuild: {
-    tsconfigRaw: {
-      compilerOptions: { experimentalDecorators: true },
-    },
   },
 });

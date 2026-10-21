@@ -2,18 +2,21 @@
 
 Updated: 2026-10-21. Scope and acceptance: [integration plan](INTEGRATION_PLAN.md).
 
-## Next package: release-blocking dependency triage
+## Completed package and next security work
 
-- [ ] Triage the [production audit](evidence/P1_PRODUCTION_AUDIT_2026-10-21.json),
-  starting with its 15 critical and 163 high reported entries. Distinguish package
-  advisories from actual shipped/reachable paths; do not infer exploitability.
+- [x] Verify the final P1 build (`065236b`) on GitHub: success.
+- [x] Resolve the 20 critical alert instances in the targeted dependency inventory.
+- [x] Add package-boundary and compatibility regressions; 82 tests and narrow types/lint pass.
+- [x] Repeat production/all-lock audits: zero critical; retain the other severity findings.
+- [x] Complete the final three-app build, localhost HTTP smoke and independent review (9.0/10).
+  Hosted results are a separate exact-revision check in the
+  [baseline workflow](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/workflows/sge-baseline.yml).
+- [ ] Triage 145 high production audit entries before any exposed service or real token.
+  Distinguish version matches from shipped/reachable paths; do not infer exploitability.
 - [ ] Repair or prove absence of affected dependencies in the selected text-only
-  artifact; avoid blindly applying major overrides across unused upstream features.
-- [ ] Rebuild, run relevant regressions and repeat the audit after each bounded fix.
-- [x] Confirm hosted fork CI separately: baseline, full build and CodeQL passed
-  on `00e8463`; [exact run evidence](evidence/P1_HOSTED_CI_2026-10-21.json).
-- [ ] Confirm GitHub's newly enabled scanning has completed; the local Gitleaks
-  check covers the current tree, not full upstream history.
+  artifact, with focused regressions and fresh audits after bounded changes.
+- [ ] Confirm GitHub's newly enabled history secret scan has completed; the local
+  Gitleaks check covers the current tree, not full upstream history.
 
 ## Decisions before later implementation
 
@@ -23,6 +26,7 @@ Updated: 2026-10-21. Scope and acceptance: [integration plan](INTEGRATION_PLAN.m
 - [ ] Resolve Polotno/commercial editor and font rights or prove those components
   are absent from the actual first artifact; audit its remaining dependency licenses.
 - [ ] Implement and verify the exact-release source offer.
+- [ ] Review custom forwarded-header handling against the selected trusted proxy.
 - [ ] Establish token storage/key rotation/backup controls and prove role/tenant
   isolation independently of billing configuration before real credentials.
 - [ ] Choose and prove Labs account/tenant to Postiz organization/channel mapping.

@@ -44,6 +44,8 @@ jobs:
         with:
           node-version: 22.22.3
           cache: pnpm
+      - name: Reject known critical dependency advisories
+        run: pnpm audit --audit-level critical
       - name: Install locked dependencies without lifecycle hooks
         run: pnpm install --frozen-lockfile --ignore-scripts
       - name: Generate the pinned Prisma client without a database

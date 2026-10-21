@@ -1,5 +1,30 @@
 # SGE publishing changes
 
+## 2026-10-21 — Critical dependency remediation
+
+The last P1 build (`065236b`) passed. Updated the 11 critical dependency families
+with targeted constraints and a regenerated frozen lock. Next is pinned at 16.3.6;
+Vitest/UI/coverage at 4.1.2 removes Tinypool. Removed unused Pigment and omitted the
+unused Happy DOM peer. Scoped overrides preserve multipart major versions and
+limit the Tar major change to the native installer. No application/authentication
+or Temporal workflow implementation changed.
+
+Added 24 actual package-boundary regressions, including normal input controls and
+installer callback/stream/promise compatibility. 82 tests and baseline types/lint
+passed. Production/all-dependency CLI reports and an independent all-lock bulk
+check contain zero critical advisories. The initial shell-quote 1.8.4 candidate was improved
+to 1.12.0 after the repeat audit exposed a newer critical advisory. No ignore,
+dismissal or provider action was used. The full three-app build passed in
+429.03 seconds; localhost login/image
+parameter checks passed with external traffic denied. Independent patch review:
+9.0/10, no concrete remaining bypass or regression. GitHub's fork baseline
+now rejects critical advisories before installation; the command's real exit
+behavior was checked separately from JSON.
+
+Release stays BLOCKED: 145 production high entries, auth/token/tenant, license,
+native/container and operating gates remain. Audit counts do not establish
+application reachability. See [P1a in the plan](INTEGRATION_PLAN.md#p1a--remove-known-critical-dependency-advisories).
+
 ## 2026-10-21 — Repair and accept the local P1 technical baseline
 
 Fixed incompatible Node pins, replaced the nonworking Nx/Jest test command with

@@ -82,7 +82,6 @@
     "@nestjs/swagger": "^11.4.3",
     "@nestjs/throttler": "^6.5.0",
     "@neynar/nodejs-sdk": "^3.112.0",
-    "@pigment-css/react": "^0.0.30",
     "@postiz/wallets": "^0.0.1",
     "@prisma/client": "6.5.0",
     "@sentry/nestjs": "10.56.0",
@@ -193,7 +192,7 @@
     "nestjs-command": "^3.1.4",
     "nestjs-real-ip": "^3.0.1",
     "nestjs-temporal-core": "^3.2.0",
-    "next": "16.3.1",
+    "next": "16.3.6",
     "next-plausible": "^3.12.0",
     "node-fetch": "^3.3.2",
     "node-telegram-bot-api": "^0.66.0",
@@ -275,7 +274,7 @@
     "@types/cookie-parser": "^1.4.6",
     "@types/express": "^5.0.6",
     "@types/jest": "29.5.12",
-    "@types/node": "18.16.9",
+    "@types/node": "22.20.5",
     "@types/node-telegram-bot-api": "^0.64.7",
     "@types/qrcode": "^1.5.5",
     "@types/react": "19.1.8",
@@ -286,8 +285,8 @@
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "7.18.0",
     "@vitejs/plugin-react": "^6.0.5",
-    "@vitest/coverage-v8": "1.6.0",
-    "@vitest/ui": "1.6.0",
+    "@vitest/coverage-v8": "4.1.2",
+    "@vitest/ui": "4.1.2",
     "autoprefixer": "^10.4.17",
     "babel-jest": "29.7.0",
     "cross-env": "^10.0.0",
@@ -316,7 +315,7 @@
     "typescript": "5.5.4",
     "vite": "^8.2.1",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "3.1.4"
+    "vitest": "4.1.2"
   },
   "volta": {
     "node": "22.22.3"
@@ -328,11 +327,19 @@
   "pnpm": {
     "overrides": {
       "multer": "^2.2.0",
-      "next": "16.3.1",
+      "next": "16.3.6",
       "react": "19.2.4",
       "react-dom": "19.2.4",
       "@types/react": "19.1.8",
-      "@types/react-dom": "19.1.6"
+      "@types/react-dom": "19.1.6",
+      "request>form-data": "2.5.5",
+      "protobufjs@<7.5.5": "7.5.5",
+      "piscina@<4.9.4": "4.9.4",
+      "handlebars@<4.7.10": "4.7.10",
+      "proxy-addr@<2.0.8": "2.0.8",
+      "@mapbox/node-pre-gyp@1.0.11>tar": "7.5.22",
+      "vitest@4.1.2>happy-dom": "-",
+      "shell-quote@<1.12.0": "1.12.0"
     },
     "onlyBuiltDependencies": [
       "bcrypt"

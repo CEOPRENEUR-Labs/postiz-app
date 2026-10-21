@@ -1,5 +1,8 @@
 # P1: Postiz fork baseline
 
+This is the historical P1 evidence. For subsequent dependency versions and gates,
+see [P1a in the current plan](INTEGRATION_PLAN.md#p1a--remove-known-critical-dependency-advisories).
+
 Updated: 2026-10-21. Scope: source inventory and isolated build/test acceptance.
 This is not a deployment, complete security audit, or provider acceptance.
 
