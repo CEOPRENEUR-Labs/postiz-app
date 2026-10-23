@@ -1,5 +1,25 @@
 # SGE publishing changes
 
+## 2026-10-23 — Critical framework refresh
+
+Updated Next/env/SWC to 16.4.1, the four direct Sentry SDKs to 10.75.2 and
+application Sharp to 0.35.5. The fresh audit's three critical and four selected
+high records disappear. Next's prior private Sharp already met the image
+workaround; cache/tunnel prerequisites remain absent in this app. No app
+configuration, authentication, UI/content, database or Temporal changes.
+
+Added 19 boundary/compatibility cases: 146 tests, types/lint and offline Prisma
+pass. Before/after checks verify tunnel middleware decisions and stable Flight
+buffer snapshots; ordinary replies and SVG/PNG/JPEG/animated GIF processing pass.
+Independent static review: 8.8/10. All three apps build; built login/local PNG
+return 200, protected routes redirect to auth (307), disallowed images return 400.
+The smoke parser now accepts valid relative Location headers; app behavior is unchanged.
+Linux x64 CPU requirements and production acceptance remain separate gates.
+
+Production audit: 0 critical / 137 high / 202 moderate / 36 low. Newly reported
+Zod findings affect unchanged resolutions; no ignore/dismissal. Release stays
+BLOCKED. See [P1d](INTEGRATION_PLAN.md#p1d--refresh-the-critical-framework-boundary).
+
 ## 2026-10-21 — Next security update
 
 Verified the previous documentation build (`4d13fe3`, run 39666258315): success.

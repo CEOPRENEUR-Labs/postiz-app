@@ -1,5 +1,50 @@
 # SGE publishing session
 
+## 2026-10-23 — P1d critical framework refresh
+
+FACT — Fetched clean Main `b0a400eec46ccc102f2f64e483d829fe12f19000` and worked
+on isolated `codex/sge-security-p1d`. Labs' unrelated dirty work was untouched.
+The fresh registry audit reported 3 critical/138 high/202 moderate/36 low.
+Two critical records match Next; one matches Sentry, whose upstream rates it
+Moderate. A fresh investigator and parent traced prerequisites and direct uses:
+Next already privately used fixed Sharp; cache/tunnel prerequisites were absent.
+The direct Sharp 0.33.5 used by five application files still needed repair.
+
+Pinned Next/override 16.4.1, four coordinated Sentry roots 10.75.2 and direct
+Sharp 0.35.5. Only their closure changes, including two Sentry OTel edges and
+removal of obsolete native Sharp packages. Root/shared runtime Sentry aligns;
+build-plugin Core 10.75.0 is a separate unchanged dependency. Official npm
+tarball SHA-512 checks and four critical installed source-file hashes match.
+
+Before/after actual component probes reproduce then remove broad synthetic
+tunnel skipping and mutable Flight queued buffer views. No RCE payload or
+external target was used. Nineteen added regressions bring the suite to 146;
+types/lint, ordinary offline Prisma and the full three-app build pass (510.47s).
+SVG/PNG/JPEG and animated GIF conversions retain dimensions/frames/timing/loop.
+Built HTTP: login/local PNG 200; protected routes redirect to auth 307;
+unconfigured/private/protocol-relative images and invalid width 400. The initial
+smoke harness rejected a valid relative Location; its parser was corrected and
+the complete smoke passed without an application change. Local dev MCP origin
+checks are recorded separately; all local servers are stopped after their run.
+
+Fresh static candidate review: 8.8/10, no scoped surviving bypass. Its concrete
+conditional compatibility note is retained: root Sharp now extends Linux x64-v2
+requirements to backend/orchestrator imports. Target CPU/container is UNKNOWN.
+Private emitter checks do not prove real streaming/backpressure/detachment;
+native RCE and production parity were not exercised. Runtime checks used pinned
+Node22.22.3/pnpm10.6.1 with home access denied and network denied except the
+bounded installation/audit downloads or localhost-only tests/smokes.
+
+Current production audit: 0 critical/137 high/202 moderate/36 low; full audit:
+0 critical/142 high/203 moderate/36 low. Seven selected records disappear;
+new Zod findings match unchanged resolutions. JSON commands exit 1 for remaining
+findings; the unchanged plain critical gate exits 0. No ignore/dismissal.
+The scheduled staging run 40019055841 still fails its existing SSH key preflight
+(`error in libcrypto`); no deploy key/provider configuration was changed.
+Sentry root config import deprecation and the older instrumentation warning stay
+visible in TODO. Hosted delivery remains an independent exact-SHA gate. Release,
+hosting, accounts, tokens, publications and recurring cost remain unapproved.
+
 ## 2026-10-21 — P1c Next security update
 
 FACT — Starting Main `4d13fe35f8bf31a8281876195d56dc80b9462861` was clean.

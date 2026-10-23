@@ -1,6 +1,6 @@
 # Postiz as the SGE publishing service
 
-Updated: 2026-10-21. Status: P1 technical baseline accepted locally and on GitHub; release blocked.
+Updated: 2026-10-23. Status: P1 technical baseline accepted locally and on GitHub; release blocked.
 
 This document is the canonical plan for this fork. [ROADMAP](ROADMAP.md)
 tracks order, [TODO](TODO.md) tracks open work, [SESSION](SESSION.md) records
@@ -277,6 +277,53 @@ critical CI command exits 0. Exact-revision hosted checks remain an independent
 publishing gate in the [baseline workflow](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/workflows/sge-baseline.yml)
 and [Build workflow](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/workflows/build.yml).
 
+### P1d — Refresh the critical framework boundary
+
+FACT — The October 23 registry audit matched three critical records that were
+absent from the P1c receipt: Next's SVG/native-library and cached typed-array
+issues, and Sentry's conditional tunnel middleware bypass. These are dependency
+matches, not three demonstrated application exploits. Next already privately
+resolved Sharp 0.35.5, satisfying the image advisory's workaround. Application
+Cache Components/`use cache` and Sentry `tunnelRoute` remain absent. Sentry's
+upstream severity is Moderate, whereas this registry receipt reports Critical.
+
+Pinned Next and its existing override to 16.4.1, the four direct Sentry SDKs to
+10.75.2, and application Sharp to 0.35.5. The coordinated Sentry runtime avoids
+mixed SDK versions; an unchanged build-plugin Core 10.75.0 is separate from the
+Next middleware wrapper. The only locked Sharp is now 0.35.5. No app configuration,
+authentication, UI/content, provider, database or Temporal implementation changes.
+
+Actual before/after component checks show Sentry's synthetic tunnel no longer
+skips middleware for children, GET, missing/invalid/repeated parameters; valid
+envelope POSTs remain accepted. Flight's actual private serializer now snapshots
+large aliased/resizable buffers in both Webpack and Turbopack. This is not an RCE
+reproduction or full stream/backpressure/detachment acceptance. Nineteen new cases
+bring the suite to 146 passing tests; types/lint and offline Prisma pass. Native
+SVG/PNG/JPEG and animated GIF resizing retain dimensions, frames, timing and loop.
+
+Fresh independent static review: 8.8/10, no surviving scoped bypass. Local
+technical acceptance: all three apps build (510.47 seconds), login/local PNG
+return 200, protected paths redirect to auth (307), disallowed images return 400.
+The smoke parser was corrected to accept valid relative Location headers; app
+behavior was unchanged. Hosted and production acceptance remain separate.
+Linux x64 targets must support x64-v2/SSE4.2; Sharp 0.35.5 extends that existing
+frontend prerequisite to direct backend/orchestrator imports. Target hardware is
+UNKNOWN. Prove import/conversion in every selected container/CPU before exposure;
+do not add an unverified native fallback or restore vulnerable binaries.
+
+Production audit: 0 critical / 137 high / 202 moderate / 36 low; full audit:
+0 critical / 142 high / 203 moderate / 36 low. Seven selected records disappear
+(3 critical, 4 high). Newly reported Zod findings affect unchanged resolutions;
+the current count cannot be compared with P1c as a fixed advisory database.
+JSON audits exit 1 for remaining findings; the unchanged plain critical CI gate
+exits 0. No ignore/dismissal. Exact-revision hosted delivery is checked separately
+in the existing Build and SGE baseline workflows. Release remains BLOCKED.
+
+Sources: [Next image](https://github.com/advisories/GHSA-2464-fhr4-w9xw),
+[Next cache transport](https://github.com/advisories/GHSA-673q-mjm6-r5xr),
+[Sentry tunnel](https://github.com/getsentry/sentry-javascript/security/advisories/GHSA-mchm-gjx6-7h55),
+[Sharp native requirements](https://sharp.pixelplumbing.com/install/).
+
 ### P2 — Define and prove isolated service operation
 
 - Propose hosting, region, estimated monthly cost, resource limits, data retention,
@@ -368,17 +415,20 @@ and [Build workflow](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/workf
 
 ## Current next gate
 
-P1c has local technical acceptance at 8.7/10: 127 tests, types/lint, full build,
-DNS-boundary comparison and real local image/MCP HTTP checks. Delivery checks
-are tracked against the exact pushed revision in the linked GitHub workflows;
-local acceptance does not substitute for those checks or deployment acceptance.
-Continue bounded high-severity triage (135 production entries) and the selected
-artifact's application egress paths. Keep the newly reported Vitest-Mocker
-advisory visible; no unrelated package update is folded into P1c.
+P1d has local technical acceptance at 8.8/10: 146 tests, types/lint, full build
+and built HTTP checks pass. Exact-revision hosted checks
+remain separate from local and production acceptance. Continue bounded high
+triage (137 production entries), starting with same-major multipart repairs
+(2.5.6/3.0.5/4.0.6) and selected artifact egress paths. The vulnerable legacy
+multipart copies remain; direct provider imports currently resolve the patched
+root copy, so a version match is not an established vulnerable application flow.
+Keep Vitest-Mocker and the newly reported unchanged-graph Zod advisory visible.
 License, token, role, trusted-proxy, container and recovery gates remain in P2.
 The inherited staging automation and unverified history secret scan need separate
 follow-up. `Dockerfile.dev` still uses Node 22.20 against root's >=22.22.3 engine;
-container compatibility remains open. No production/account connection is authorized.
+container/CPU compatibility remains open. Migrate Sentry's deprecated root
+`withSentryConfig` import before SDK v11; the existing missing `onRequestError`
+instrumentation warning also remains. No production/account connection is authorized.
 
 ## References
 

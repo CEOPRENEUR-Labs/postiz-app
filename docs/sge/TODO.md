@@ -1,6 +1,6 @@
 # Open SGE publishing work
 
-Updated: 2026-10-21. Scope and acceptance: [integration plan](INTEGRATION_PLAN.md).
+Updated: 2026-10-23. Scope and acceptance: [integration plan](INTEGRATION_PLAN.md).
 
 ## Completed package and next security work
 
@@ -19,10 +19,14 @@ Updated: 2026-10-21. Scope and acceptance: [integration plan](INTEGRATION_PLAN.m
 - [x] Patch Next/env/eight SWC resolutions to 16.3.8 without widening image access.
 - [x] Complete 29 new Next cases (127 total), types/lint, full build and real local
   image/MCP HTTP checks; independent review 8.7/10.
-- [ ] Triage 135 remaining high production audit entries before any exposed service or real token.
+- [x] Repair the fresh Next/Sentry critical version matches and direct Sharp closure.
+- [x] Verify 19 new cases (146 total), types/lint, offline Prisma and before/after
+  Sentry/Flight/native compatibility; independent static review 8.8/10.
+- [x] Finish P1d full build and built HTTP smoke; hosted delivery is a separate exact-SHA check.
+- [ ] Triage 137 remaining high production audit entries before any exposed service or real token.
   Distinguish version matches from shipped/reachable paths; do not infer exploitability.
 - [ ] Triage the newly reported moderate Vitest-Mocker advisory in the unchanged graph.
-  Per-revision P1c delivery status is authoritative in the linked GitHub workflows.
+- [ ] Triage newly reported Zod collection-limit findings in the unchanged graph.
 - [ ] Make inherited staging automation appropriate for this fork; its SSH preflight
   fails without a usable deploy key. Do not add production credentials as a workaround.
 - [ ] Repair or prove absence of affected dependencies in the selected text-only
@@ -35,6 +39,8 @@ Updated: 2026-10-21. Scope and acceptance: [integration plan](INTEGRATION_PLAN.m
 - [ ] Confirm hosting/region/resource envelope, monthly cost and operator owner.
 - [ ] Choose approved staging and test backup/restore, deletion, rollback and stop.
 - [ ] Reconcile Dockerfile.dev Node 22.20 with root >=22.22.3 and prove the container separately.
+- [ ] Prove Sharp import/conversion on selected CPUs; Linux x64 needs x64-v2/SSE4.2.
+- [ ] Migrate the deprecated Sentry config import before v11 and close the existing instrumentation warning.
 - [ ] Validate the concrete AGPL combined-work boundary before code integration.
 - [ ] Resolve Polotno/commercial editor and font rights or prove those components
   are absent from the actual first artifact; audit its remaining dependency licenses.
