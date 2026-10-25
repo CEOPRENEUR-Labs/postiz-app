@@ -1,6 +1,6 @@
 # Open SGE publishing work
 
-Updated: 2026-10-23. Scope and acceptance: [integration plan](INTEGRATION_PLAN.md).
+Updated: 2026-10-25. Scope and acceptance: [integration plan](INTEGRATION_PLAN.md).
 
 ## Completed package and next security work
 
@@ -23,7 +23,11 @@ Updated: 2026-10-23. Scope and acceptance: [integration plan](INTEGRATION_PLAN.m
 - [x] Verify 19 new cases (146 total), types/lint, offline Prisma and before/after
   Sentry/Flight/native compatibility; independent static review 8.8/10.
 - [x] Finish P1d full build and built HTTP smoke; hosted delivery is a separate exact-SHA check.
-- [ ] Triage 137 remaining high production audit entries before any exposed service or real token.
+- [x] Repair all five legacy multipart edges within their existing majors and verify
+  part/header injection before/after; 105 new cases, 251 total, types/lint pass.
+- [x] Complete fresh independent multipart static review (9.0/10).
+- [x] Finish P1e full build; hosted delivery remains a separate exact-SHA gate.
+- [ ] Triage 139 remaining high production audit entries before any exposed service or real token.
   Distinguish version matches from shipped/reachable paths; do not infer exploitability.
 - [ ] Triage the newly reported moderate Vitest-Mocker advisory in the unchanged graph.
 - [ ] Triage newly reported Zod collection-limit findings in the unchanged graph.

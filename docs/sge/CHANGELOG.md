@@ -1,5 +1,23 @@
 # SGE publishing changes
 
+## 2026-10-25 — Multipart dependency repair
+
+Replaced the old request pin with bounded same-major form-data overrides:
+2.5.6/3.0.5/4.0.6. All five vulnerable consumer edges are repaired; existing
+provider/Axios root 4.0.6 remains. No application configuration, authentication,
+UI/content, database, provider or Temporal implementation changed.
+
+Added 105 boundary/compatibility cases: 251 tests, types/lint and offline Prisma
+pass. Actual before/after builders and native parsing no longer permit synthetic
+part/header injection; normal names, file/stream bytes, lengths and MIME remain.
+Independent static review: 9.0/10. The full three-app build passes; exact-SHA
+hosted delivery remains separate.
+
+Production audit: 0 critical / 139 high / 209 moderate / 38 low. Three matching
+high records disappear; no ignore/dismissal. Actual provider operation and raw
+custom header trust remain separate. Release stays BLOCKED.
+See [P1e](INTEGRATION_PLAN.md#p1e--repair-multipart-field-and-filename-serialization).
+
 ## 2026-10-23 — Critical framework refresh
 
 Updated Next/env/SWC to 16.4.1, the four direct Sentry SDKs to 10.75.2 and

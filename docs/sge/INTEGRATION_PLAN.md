@@ -1,6 +1,6 @@
 # Postiz as the SGE publishing service
 
-Updated: 2026-10-23. Status: P1 technical baseline accepted locally and on GitHub; release blocked.
+Updated: 2026-10-25. Status: P1 technical baseline accepted locally and on GitHub; release blocked.
 
 This document is the canonical plan for this fork. [ROADMAP](ROADMAP.md)
 tracks order, [TODO](TODO.md) tracks open work, [SESSION](SESSION.md) records
@@ -324,6 +324,41 @@ Sources: [Next image](https://github.com/advisories/GHSA-2464-fhr4-w9xw),
 [Sentry tunnel](https://github.com/getsentry/sentry-javascript/security/advisories/GHSA-mchm-gjx6-7h55),
 [Sharp native requirements](https://sharp.pixelplumbing.com/install/).
 
+### P1e — Repair multipart field and filename serialization
+
+FACT — The fresh October 25 production audit matched three high records for
+[GHSA-hmw2-7cc7-3qxx](https://github.com/form-data/form-data/security/advisories/GHSA-hmw2-7cc7-3qxx).
+Five vulnerable consumer edges used form-data 2.5.5, 3.0.4 or 4.0.5. Replaced
+the old request-specific pin with three bounded same-major overrides to 2.5.6,
+3.0.5 and 4.0.6. Already-safe root/provider and Axios 4.0.6 resolutions remain.
+The lock changes only those package versions, a compatible shared hasown edge
+and refreshed registry deprecation metadata; no application/UI/content changes.
+
+Actual before/after builders plus independent native multipart parsing show
+five contexts previously accepted a smuggled part/header and now reject that
+interpretation. Seven consumer contexts cover all four installed copies.
+105 new cases bring the suite to 251: field CR/LF/quotes, six filename sources,
+Unicode/bracket/dotted names, binary/stream bytes, lengths, MIME and relative paths.
+The parser decodes the safely escaped filename; the initial fixture expectation
+was corrected without changing application behavior or weakening security checks.
+Types/lint, ordinary offline Prisma and the complete three-app build pass
+(255.67 seconds). Local technical acceptance is complete; hosted delivery is separate.
+Fresh independent static review: 9.0/10, no surviving scoped bypass/regression.
+
+This is dependency-level remediation and engine-level evidence, not a proven
+application exploit or deployed/provider acceptance. Direct provider imports
+already used safe 4.0.6. Transloadit's application upload label is fixed
+`subtitles.srt`; user subtitle text is its body. Application JSDOM callers parse
+HTML, and Telegram's principal request dependency is the safe Cypress fork.
+Explicit `options.header`/`contentType` remain caller-controlled facilities outside
+the advisory guarantee. No provider upload or credential was used.
+
+Fresh production audit: 0 critical / 139 high / 209 moderate / 38 low; full audit:
+0 critical / 144 high / 210 moderate / 38 low. The three form-data records disappear
+against the same-day starting count of 142 high. JSON audits exit 1 for remaining
+findings; the unchanged plain critical gate exits 0. No ignore/dismissal.
+Hosted checks remain an independent exact-revision gate. Release remains BLOCKED.
+
 ### P2 — Define and prove isolated service operation
 
 - Propose hosting, region, estimated monthly cost, resource limits, data retention,
@@ -415,13 +450,11 @@ Sources: [Next image](https://github.com/advisories/GHSA-2464-fhr4-w9xw),
 
 ## Current next gate
 
-P1d has local technical acceptance at 8.8/10: 146 tests, types/lint, full build
-and built HTTP checks pass. Exact-revision hosted checks
-remain separate from local and production acceptance. Continue bounded high
-triage (137 production entries), starting with same-major multipart repairs
-(2.5.6/3.0.5/4.0.6) and selected artifact egress paths. The vulnerable legacy
-multipart copies remain; direct provider imports currently resolve the patched
-root copy, so a version match is not an established vulnerable application flow.
+P1e has local technical acceptance at 9.0/10: 251 tests, types/lint and full
+build pass. Exact-revision hosted checks remain separate from local
+and production acceptance. Continue bounded high triage (139 production entries)
+and the selected artifact's URL/DNS/redirect egress paths. Multipart dependency
+remediation does not prove outbound-target safety or actual provider acceptance.
 Keep Vitest-Mocker and the newly reported unchanged-graph Zod advisory visible.
 License, token, role, trusted-proxy, container and recovery gates remain in P2.
 The inherited staging automation and unverified history secret scan need separate

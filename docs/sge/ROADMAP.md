@@ -1,6 +1,6 @@
 # SGE publishing roadmap
 
-Updated: 2026-10-23. Canonical scope: [integration plan](INTEGRATION_PLAN.md).
+Updated: 2026-10-25. Canonical scope: [integration plan](INTEGRATION_PLAN.md).
 
 | Stage | Outcome | Status |
 | --- | --- | --- |
@@ -10,7 +10,8 @@ Updated: 2026-10-23. Canonical scope: [integration plan](INTEGRATION_PLAN.md).
 | P1b | Shared HTTP dependency repair | Accepted at 8.5/10: Axios 1.20.0/redirects 1.16.1, 98 tests/full build locally; both hosted workflows passed on `11b58ca`; GitHub critical alerts 0 open/20 fixed |
 | P1c | Next framework security patch | Local acceptance 8.7/10: Next/env/SWC 16.3.8, 127 tests/full build and image/MCP HTTP checks; exact-revision hosted gate is separate |
 | P1d | Fresh critical framework repair | Next 16.4.1/Sentry 10.75.2/Sharp 0.35.5; 146 tests/full build/HTTP locally; static review 8.8/10; hosted gate separate |
-| Release stop | High-severity dependency triage and other recorded gates | BLOCKED: 137 high production audit entries after P1d plus auth/license/native CPU/operating acceptance before exposure/real tokens |
+| P1e | Multipart dependency boundary | 2.5.6/3.0.5/4.0.6; 251 tests/types/lint/full build pass locally, static review 9.0/10; hosted gate separate |
+| Release stop | High-severity dependency triage and other recorded gates | BLOCKED: 139 high production audit entries after P1e plus auth/license/native CPU/operating acceptance before exposure/real tokens |
 | P2 | Isolated service, operations and source-offer proof | Not started; dependency/security/license gates and hosting/cost decisions open |
 | P3 | Offline server-side, tenant-bound draft adapter | Not started |
 | P4 | One authorized own-channel draft, no publication | Not started; account/scopes and environment open |

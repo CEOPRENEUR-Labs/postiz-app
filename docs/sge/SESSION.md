@@ -1,5 +1,49 @@
 # SGE publishing session
 
+## 2026-10-25 — P1e multipart dependency repair
+
+FACT — Main remained `1095e4a5a1e8222047e34b3d43e53ced93f4752d`. Previous
+temporary checkouts were incomplete, so a fresh isolated checkout was made from
+the confirmed remote; existing folders and unrelated Labs edits were preserved.
+Used `codex/sge-multipart-security`, Node22.22.3 and pnpm10.6.1. Restored the
+pinned Prisma engine cache without a database, then repeated generation offline.
+
+A fresh read-only investigator and parent traced the five vulnerable lock edges,
+all filename sources and actual callers. Direct provider/Axios imports resolve
+safe root4.0.6; Transloadit uses fixed label `subtitles.srt` and subtitle text as
+body. No vulnerable application attacker path was established. Browser/global
+FormData and Telegram's safe Cypress request implementation are separate.
+
+Replaced request's old2.5.5 override with three bounded same-major selectors:
+2.5.6/3.0.5/4.0.6. Only form-data versions change, with a compatible shared
+hasown edge and refreshed registry deprecation metadata. Official npm tarball
+SHA-512 checks and four installed implementation-file SHA-256 matches pass.
+Before/after actual builders and independent native parsing show five contexts
+changing from two parsed parts/injected header to one part/no injected header;
+two already-safe contexts remain safe. No network request or upload was sent.
+
+105 regressions cover seven consumer contexts and all four physical copies.
+All 251 tests, types/lint, ordinary offline Prisma and the complete frontend,
+backend and orchestrator build pass (255.67 seconds). An initial fixture expected
+an encoded parsed filename; it now correctly checks encoded wire bytes and the
+native parser's decoded original filename. No production code or gate was weakened.
+The frozen install gate also correctly rejected an attempt before lock generation
+completed; it passed on the final lock. Existing Sentry warnings remain visible.
+
+Fresh independent static review: 9.0/10; no scoped surviving bypass/regression.
+Filename cases check serialized headers; parsed extra-part attacks exercise the
+field-name path. Explicit raw headers/contentType remain caller-controlled and
+outside this guarantee. Actual provider operation, egress safety, full secret
+history, container/CPU and production parity remain unverified. These are bounded
+dependency/component checks, labelled engine-level evidence in the plan.
+
+Starting production audit: 0 critical/142 high/209 moderate/38 low. After repair:
+0 critical/139 high/209 moderate/38 low; full graph0 critical/144 high/210 moderate/
+38 low. Three selected high records disappear. JSON audits still exit1 for other
+findings; the unchanged plain critical gate exits0. No ignore/dismissal, provider,
+credential, deployment, publication, feature flag or recurring-cost operation.
+Exact-SHA hosted delivery is recorded separately; release remains BLOCKED.
+
 ## 2026-10-23 — P1d critical framework refresh
 
 FACT — Fetched clean Main `b0a400eec46ccc102f2f64e483d829fe12f19000` and worked
