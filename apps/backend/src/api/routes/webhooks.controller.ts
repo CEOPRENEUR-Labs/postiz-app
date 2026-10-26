@@ -1,3 +1,4 @@
+import { fetchPublicHttps } from '@gitroom/nestjs-libraries/dtos/webhooks/ssrf.safe.dispatcher';
 import {
   Body,
   Controller,
@@ -56,7 +57,7 @@ export class WebhookController {
   @Post('/send')
   async sendWebhook(@Body() body: any, @Query() query: OnlyURL) {
     try {
-      await fetch(query.url, {
+      await fetchPublicHttps(query.url, {
         method: 'POST',
         body: JSON.stringify(body),
         headers: { 'Content-Type': 'application/json' },

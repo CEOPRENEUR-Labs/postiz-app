@@ -1,6 +1,6 @@
 # SGE publishing roadmap
 
-Updated: 2026-10-25. Canonical scope: [integration plan](INTEGRATION_PLAN.md).
+Updated: 2026-10-26. Canonical scope: [integration plan](INTEGRATION_PLAN.md).
 
 | Stage | Outcome | Status |
 | --- | --- | --- |
@@ -11,6 +11,7 @@ Updated: 2026-10-25. Canonical scope: [integration plan](INTEGRATION_PLAN.md).
 | P1c | Next framework security patch | Local acceptance 8.7/10: Next/env/SWC 16.3.8, 127 tests/full build and image/MCP HTTP checks; exact-revision hosted gate is separate |
 | P1d | Fresh critical framework repair | Next 16.4.1/Sentry 10.75.2/Sharp 0.35.5; 146 tests/full build/HTTP locally; static review 8.8/10; hosted gate separate |
 | P1e | Multipart dependency boundary | 2.5.6/3.0.5/4.0.6; 251 tests/types/lint/full build pass locally, static review 9.0/10; hosted gate separate |
+| P1f | URL/DNS/redirect transport boundary | 302 tests/types/lint/offline Prisma/full build pass; initial independent review 8.5/10, confirmed Bluesky sibling closed, final parent assessment 8.8/10; exact-SHA hosted gate separate |
 | Release stop | High-severity dependency triage and other recorded gates | BLOCKED: 139 high production audit entries after P1e plus auth/license/native CPU/operating acceptance before exposure/real tokens |
 | P2 | Isolated service, operations and source-offer proof | Not started; dependency/security/license gates and hosting/cost decisions open |
 | P3 | Offline server-side, tenant-bound draft adapter | Not started |

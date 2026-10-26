@@ -5,7 +5,8 @@ see [P1a](INTEGRATION_PLAN.md#p1a--remove-known-critical-dependency-advisories) 
 [P1b](INTEGRATION_PLAN.md#p1b--repair-the-shared-http-dependency-boundary) and
 [P1c](INTEGRATION_PLAN.md#p1c--patch-next-without-widening-the-image-allowlist) and
 [P1d](INTEGRATION_PLAN.md#p1d--refresh-the-critical-framework-boundary) and
-[P1e in the current plan](INTEGRATION_PLAN.md#p1e--repair-multipart-field-and-filename-serialization).
+[P1e](INTEGRATION_PLAN.md#p1e--repair-multipart-field-and-filename-serialization) and
+[P1f in the current plan](INTEGRATION_PLAN.md#p1f--enforce-url-dns-and-redirect-protection-at-the-transport).
 
 Updated: 2026-10-21. Scope: source inventory and isolated build/test acceptance.
 This is not a deployment, complete security audit, or provider acceptance.

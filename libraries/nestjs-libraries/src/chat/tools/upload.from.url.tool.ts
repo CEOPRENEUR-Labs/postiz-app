@@ -13,7 +13,7 @@ export class UploadFromUrlTool implements AgentToolInterface {
   run() {
     return createTool({
       id: 'uploadFromUrlTool',
-      description: `Upload a remote image or video into the media library from a public http(s) URL.
+      description: `Upload a remote image or video into the media library from a public HTTPS URL.
 Local or private files cannot be fetched by this tool: upload them with the Postiz CLI (postiz upload, https://docs.postiz.com/cli/introduction) or the public API (POST /public/v1/upload with an API key, https://docs.postiz.com/public-api/introduction).
 Use this before scheduling a post when the user provides an external media URL (not already hosted on our domain),
 so the attachment passes the upload-domain validation. Returns the hosted media { id, path, status } to use as an attachment (or as the src of an <img> in the content, when the channel rules say pictures go inside the content), or { error } on failure.
@@ -33,7 +33,7 @@ Without adjust the status is "ready" and the path can be used immediately. With 
           .string()
           .url()
           .describe(
-            'The public http(s) URL of the image or video to upload. Local files and private hosts are not supported, use the Postiz CLI (postiz upload) or POST /public/v1/upload instead'
+            'The public HTTPS URL of the image or video to upload. Local files and private hosts are not supported, use the Postiz CLI (postiz upload) or POST /public/v1/upload instead'
           ),
         adjust: z
           .boolean()
@@ -84,7 +84,7 @@ Without adjust the status is "ready" and the path can be used immediately. With 
           const causeText = causes.length ? ` (${causes.join(': ')})` : '';
 
           return {
-            error: `Failed to upload media from URL: ${message}${causeText}. Only public http(s) URLs work: upload local or private files with the Postiz CLI (postiz upload, https://docs.postiz.com/cli/introduction) or the public API (POST /public/v1/upload with an API key, https://docs.postiz.com/public-api/introduction)`,
+            error: `Failed to upload media from URL: ${message}${causeText}. Only public HTTPS URLs work: upload local or private files with the Postiz CLI (postiz upload, https://docs.postiz.com/cli/introduction) or the public API (POST /public/v1/upload with an API key, https://docs.postiz.com/public-api/introduction)`,
           };
         }
       },

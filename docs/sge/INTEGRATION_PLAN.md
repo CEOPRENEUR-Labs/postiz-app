@@ -1,6 +1,6 @@
 # Postiz as the SGE publishing service
 
-Updated: 2026-10-25. Status: P1 technical baseline accepted locally and on GitHub; release blocked.
+Updated: 2026-10-26. Status: P1 technical baseline accepted locally and on GitHub; release blocked.
 
 This document is the canonical plan for this fork. [ROADMAP](ROADMAP.md)
 tracks order, [TODO](TODO.md) tracks open work, [SESSION](SESSION.md) records
@@ -359,6 +359,71 @@ against the same-day starting count of 142 high. JSON audits exit 1 for remainin
 findings; the unchanged plain critical gate exits 0. No ignore/dismissal.
 Hosted checks remain an independent exact-revision gate. Release remains BLOCKED.
 
+### P1f — Enforce URL, DNS and redirect protection at the transport
+
+FACT — The lookup-only guard let Node skip validation for literal addresses.
+Eight actual before/after Fetch/Axios requests using loopback and numeric aliases
+read a synthetic private response on `ce9c066`; all eight are rejected before
+contacting the fixture after this patch. No external/private service was probed.
+
+The existing shared transport now rejects blocked literals before connecting,
+checks every OS-resolved DNS address, fails closed on empty/failed answers and
+connects using that same checked answer. Axios checks its initial and redirect
+URLs, uses the Node HTTP adapter and ignores environment proxies so proxy-side
+DNS cannot bypass the guard. No dependency, schema or environment default changes.
+
+| Entry point | Current enforcement and compatibility |
+| --- | --- |
+| Generic providers using `SocialAbstract`, custom Mastodon/WordPress/Lemmy/Listmonk and existing safe Axios consumers | Shared pinned DNS/literal protection applies at use and on redirects; public HTTP(S) and the existing explicit private-network opt-out remain |
+| Local/cloud storage `uploadSimple` and `MediaService.uploadFromUrl` | `fetchPublicHttps` enforces HTTPS on the initial target and all redirect origins, independent of the provider opt-out; signed URLs, bodies and streams retain native Fetch semantics |
+| PNG-to-JPEG conversion in `PostsService.updateMedia` | Uses the existing safe Axios client rather than plain Axios; existing conversion fallback and storage behavior remain |
+| Webhook test send and scheduled `sendWebhooks` activity | Mandatory public HTTPS transport even with the provider opt-out set; best-effort error behavior and activity parameters remain |
+| Bluesky SDK login and stored integrations | Both `BskyAgent` constructors receive protected Fetch by default, covering login, later requests and DID-provided PDS destinations; explicit provider opt-out remains |
+| Public stream and MCP relay | Existing per-hop checks/redirect rejection retain the shared connector's literal and DNS protection |
+
+FACT — Independent static review of the initial candidate: 8.5/10, no bypass in
+the changed clients; it identified Bluesky's separate native SDK fetch as a
+surviving sibling. That confirmed path is now wired through the same HTTPS
+boundary and tested using the installed SDK: normal login succeeds, private
+login redirects, stored service URLs and DID PDS URLs are rejected. Final parent
+assessment: 8.8/10 within this bounded package. No second independent review is claimed. The package gate stayed open until the
+confirmed SDK path was repaired and revalidated.
+
+Types, scoped lint, offline Prisma and the final three-app build (139.64 seconds)
+pass. The October 26 production audit remains 0 critical / 139 high / 209 moderate /
+38 low; the unchanged critical gate exits 0. Initial audits against the installed
+tree exhausted the local heap; byte-identical manifests/lockfile audited without
+that tree pass the critical gate, without changing the audit rules.
+
+51 new cases bring the suite to 302: IPv4/IPv6 aliases, public literals,
+mixed/empty DNS, rebinding after DTO validation, private literal/DNS redirects,
+HTTPS downgrade, signed relative URLs, native POST redirect rules and sensitive
+header stripping, Range/206, arraybuffer/stream responses, proxy isolation,
+redirect limits and already-aborted requests. Public transport tests simulate
+only the TLS/socket boundary with loopback fixtures; they are engine-level
+evidence, not real TLS/provider or deployment acceptance. In-flight body
+cancellation and exhaustive egress coverage are not claimed. Generated-image
+`data:` parsing remains in both storage providers, before remote transport.
+
+Behavioral limits: MCP URL upload now consistently requires HTTPS, matching
+`UploadDto`; its descriptions are updated. Protected Axios intentionally ignores
+`HTTP_PROXY`, `HTTPS_PROXY` and `ALL_PROXY`. Do not disable SSRF protection to work
+around a proxy requirement; choose and verify controlled egress in P2. Previously
+stored private/HTTP webhooks now fail their existing best-effort send path.
+
+BASELINE maintenance exception — Low-level transport diagnostics and the inherited
+English MCP protocol descriptions retain the upstream technical error contract.
+This scoped server fix does not introduce locale propagation or a new UI layer;
+localized presentation of backend errors remains an explicit pre-release gate.
+The only amended tool copy states the existing HTTPS admission contract. Content
+and styling are otherwise untouched; no new presentation logic is introduced.
+
+UNKNOWN — This is not a complete audit of every SDK/provider/AI/shortener/OAuth
+request. Actual artifact egress allowlisting, hosted network/proxy/TLS behavior,
+auth/token/tenant isolation and operating acceptance remain release gates. No
+Temporal workflow file or activity parameter, UI/design, credentials, deployment
+or publication changed. See the current next gate for final verification.
+
 ### P2 — Define and prove isolated service operation
 
 - Propose hosting, region, estimated monthly cost, resource limits, data retention,
@@ -450,11 +515,12 @@ Hosted checks remain an independent exact-revision gate. Release remains BLOCKED
 
 ## Current next gate
 
-P1e has local technical acceptance at 9.0/10: 251 tests, types/lint and full
-build pass. Exact-revision hosted checks remain separate from local
-and production acceptance. Continue bounded high triage (139 production entries)
-and the selected artifact's URL/DNS/redirect egress paths. Multipart dependency
-remediation does not prove outbound-target safety or actual provider acceptance.
+P1f has local technical acceptance at 8.8/10: 302 tests, focused types/lint,
+offline Prisma and the final three-app build pass. Exact-revision hosted delivery
+is recorded separately in SESSION. Continue
+bounded high-severity dependency triage and select the actual artifact before
+proving its complete outbound allowlist. The transport fix does not prove actual
+provider acceptance or safe operation of every external integration.
 Keep Vitest-Mocker and the newly reported unchanged-graph Zod advisory visible.
 License, token, role, trusted-proxy, container and recovery gates remain in P2.
 The inherited staging automation and unverified history secret scan need separate

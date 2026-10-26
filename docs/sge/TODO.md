@@ -1,6 +1,6 @@
 # Open SGE publishing work
 
-Updated: 2026-10-25. Scope and acceptance: [integration plan](INTEGRATION_PLAN.md).
+Updated: 2026-10-26. Scope and acceptance: [integration plan](INTEGRATION_PLAN.md).
 
 ## Completed package and next security work
 
@@ -27,6 +27,11 @@ Updated: 2026-10-25. Scope and acceptance: [integration plan](INTEGRATION_PLAN.m
   part/header injection before/after; 105 new cases, 251 total, types/lint pass.
 - [x] Complete fresh independent multipart static review (9.0/10).
 - [x] Finish P1e full build; hosted delivery remains a separate exact-SHA gate.
+- [x] Repair shared literal/DNS/redirect protection and plain Axios conversion.
+- [x] Enforce HTTPS for media/webhooks and wire both Bluesky SDK constructors.
+- [x] Prove old/new literal behavior and 51 new cases (302 total); types/lint pass.
+- [x] Finish P1f full build, offline Prisma and critical audit; final local score 8.8/10.
+- [ ] Verify exact-SHA P1f hosted delivery independently.
 - [ ] Triage 139 remaining high production audit entries before any exposed service or real token.
   Distinguish version matches from shipped/reachable paths; do not infer exploitability.
 - [ ] Triage the newly reported moderate Vitest-Mocker advisory in the unchanged graph.
@@ -46,12 +51,15 @@ Updated: 2026-10-25. Scope and acceptance: [integration plan](INTEGRATION_PLAN.m
 - [ ] Prove Sharp import/conversion on selected CPUs; Linux x64 needs x64-v2/SSE4.2.
 - [ ] Migrate the deprecated Sentry config import before v11 and close the existing instrumentation warning.
 - [ ] Validate the concrete AGPL combined-work boundary before code integration.
+- [ ] Provide localized presentation of backend/transport errors before release;
+  the bounded inherited-English maintenance exception is recorded in P1f.
 - [ ] Resolve Polotno/commercial editor and font rights or prove those components
   are absent from the actual first artifact; audit its remaining dependency licenses.
 - [ ] Implement and verify the exact-release source offer.
 - [ ] Review custom forwarded-header handling against the selected trusted proxy.
-- [ ] Review plain-Axios media conversion and prove all selected outbound paths
-  enforce the intended URL/DNS/redirect boundary; dependency patches alone do not.
+- [x] Replace plain-Axios media conversion and close the reviewed shared transport/SDK gaps.
+- [ ] Select the actual artifact and prove its complete egress allowlist, including
+  remaining SDK/provider paths and deployed network/proxy/TLS behavior.
 - [ ] Establish token storage/key rotation/backup controls and prove role/tenant
   isolation independently of billing configuration before real credentials.
 - [ ] Choose and prove Labs account/tenant to Postiz organization/channel mapping.

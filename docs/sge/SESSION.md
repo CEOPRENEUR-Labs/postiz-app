@@ -1,5 +1,61 @@
 # SGE publishing session
 
+## 2026-10-26 — P1f URL, DNS and redirect boundary
+
+Started from clean own-fork Main `ce9c066`; fetched origin and verified equality.
+Labs' unrelated dirty/staged work was preserved. Branch: `codex/sge-egress-security`.
+
+Fixed shared Fetch/Axios literal bypass, pinned full DNS answers and redirect
+checks, and protected Axios environment-proxy bypass. Routed PNG conversion,
+media imports, storage and both webhook send paths through protected clients.
+Initial independent static review: 8.5/10 scoped candidate, with one confirmed
+Bluesky SDK sibling outside the diff. The package gate stayed open: both SDK
+constructors now use protected HTTPS Fetch, covering admission, stored URLs and
+DID-provided PDS URLs. No second independent review is claimed.
+
+| Work step | Evidence and self-review |
+| --- | --- |
+| Boundary investigation | 8.7/10: independent source trace and eight actual old-code synthetic private reads; no live/provider impact inferred |
+| Shared transport and caller repair | Initial scoped static review 8.5/10; final parent 8.8/10 after the confirmed SDK sibling was fixed and actual installed-SDK cases passed |
+| Verification and tracking | 8.8/10: 302 tests, focused types/lint, offline Prisma, full three-app build and critical audit pass; deployed egress/TLS and operating acceptance remain open |
+
+Before/after uses source from `ce9c066` and the current file, transpiled with the
+installed compiler. Eight literal/numeric-alias Fetch/Axios cases read only a
+synthetic loopback marker before and are rejected with zero fixture hits after;
+the explicit generic-provider private-network opt-out still works. 51 new tests
+exercise actual transports/SDK; public TLS/socket routing is simulated locally.
+The suite totals 302 tests in nine files. Already-aborted cancellation is covered;
+in-flight body cancellation and exhaustive provider coverage are not claimed.
+
+Final local checks: frozen install without hooks; ordinary offline Prisma6.5;
+`pnpm run typecheck:sge-baseline`; scoped ESLint on baseline tests and transport;
+`pnpm test`; `pnpm run build` (139.64 seconds), all pass. Current-tree Gitleaks:
+24 reviewed checksum/source-digest matches, zero unresolved credentials; no
+history-scan claim. October26 production audit: 0 critical /139 high /209 moderate
+/38 low; JSON audit exits1 for remaining findings, plain critical gate exits0.
+Audited nine byte-identical manifest/lock/workspace files; no dependency change,
+ignore, dismissal or manual graph submission.
+
+Setup failures retained: incomplete old dependencies survived an incremental
+install and caused a Sentry type/bin mismatch; preserved them and reinstalled
+completely without hooks. Offline install initially lacked pinned tarballs;
+normal frozen install obtained them, and normal Prisma engine download repaired
+the empty engine cache before offline generation passed. Harness-only Git config
+access and missing pnpm executable-name setup were corrected. A simulated socket
+needed native connecting lifecycle; DNS mock overload typing was corrected.
+Initial audits against the installed tree exhausted the local heap; repeated
+unchanged audits from exact manifest copies succeeded. No product gate weakened.
+
+Behavior changes: media imports/tool copy and webhooks enforce public HTTPS,
+even with the provider opt-out; protected Axios ignores environment proxies.
+Generated-image data URLs remain parsed locally. See P1f's explicit bounded
+English technical-error maintenance exception and pre-release localization gate.
+No Temporal workflow/parameter, UI/design, schema, credentials, deployment,
+publication, source offer or operating approval changed. Existing Sentry import/
+instrumentation warnings and staging SSH preflight remain separate open work.
+
+Delivery: local acceptance complete; exact-SHA hosted checks are still separate.
+
 ## 2026-10-25 — P1e multipart dependency repair
 
 FACT — Main remained `1095e4a5a1e8222047e34b3d43e53ced93f4752d`. Previous

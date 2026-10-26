@@ -1,5 +1,27 @@
 # SGE publishing changes
 
+## 2026-10-26 — URL, DNS and redirect transport repair
+
+Closed literal-IP and DNS-to-use gaps in the shared Fetch/Axios transports,
+including redirect targets; disabled environment proxy bypasses for protected
+Axios. Routed plain PNG conversion, media imports and test/scheduled webhooks
+through protected clients. Both Bluesky SDK constructors now protect login,
+stored services and DID-provided PDS URLs. No dependency or workflow-history change.
+
+Eight old transport probes read a synthetic private response; all eight now fail
+before contacting it. Added 51 cases (302 total), including actual installed SDK
+behavior and ordinary signed redirects, POSTs and streams. Initial independent
+review: 8.5/10; its confirmed Bluesky sibling was closed, final parent rating 8.8/10.
+Types/lint, offline Prisma and the final three-app build pass. Production audit
+remains 0 critical / 139 high / 209 moderate / 38 low; critical gate passes.
+Exact-revision hosted status is recorded separately in SESSION.
+
+Media imports and webhooks require public HTTPS even with the provider opt-out;
+MCP upload descriptions now match this contract. Generic-provider private-network
+opt-out remains. Protected Axios ignores environment proxies; unchanged data-URL
+image parsing stays local. No deployment, provider credential or publication.
+Release remains BLOCKED on the recorded dependency and operating gates.
+
 ## 2026-10-25 — Multipart dependency repair
 
 Replaced the old request pin with bounded same-major form-data overrides:

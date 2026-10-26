@@ -28,6 +28,7 @@ import { isSafePublicHttpsUrl } from '@gitroom/nestjs-libraries/dtos/webhooks/we
 import {
   getSsrfSafeAxios,
   getSsrfSafeDispatcher,
+  fetchPublicHttps,
 } from '@gitroom/nestjs-libraries/dtos/webhooks/ssrf.safe.dispatcher';
 import sharp from 'sharp';
 import { Plug } from '@gitroom/helpers/decorators/plug.decorator';
@@ -316,10 +317,8 @@ export class BlueskyProvider extends SocialAbstract implements SocialProvider {
   }) {
     const body = JSON.parse(Buffer.from(params.code, 'base64').toString());
 
-    // Bluesky talks to a user-supplied service URL via BskyAgent (not our
-    // `this.fetch`), so the undici SSRF dispatcher can't intercept it. Validate
-    // the URL here — the connection chokepoint — so an internal/private address
-    // can never be saved as an integration. Opt-out matches the dispatcher env.
+    // Validate at admission and pin the SDK's actual requests below: admission
+    // alone cannot protect redirects, changed DNS or a DID-provided PDS URL.
     if (
       process.env.DISABLE_SSRF_PROTECTION !== 'true' &&
       !(await isSafePublicHttpsUrl(body.service))
@@ -330,6 +329,7 @@ export class BlueskyProvider extends SocialAbstract implements SocialProvider {
     try {
       const agent = new BskyAgent({
         service: body.service,
+        fetch: process.env.DISABLE_SSRF_PROTECTION === 'true' ? undefined : fetchPublicHttps,
       });
 
       const {
@@ -364,6 +364,7 @@ export class BlueskyProvider extends SocialAbstract implements SocialProvider {
     );
     const agent = new BskyAgent({
       service: body.service,
+      fetch: process.env.DISABLE_SSRF_PROTECTION === 'true' ? undefined : fetchPublicHttps,
     });
 
     try {

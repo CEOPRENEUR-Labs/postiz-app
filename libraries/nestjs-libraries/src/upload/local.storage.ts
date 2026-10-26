@@ -3,7 +3,7 @@ import { createWriteStream, mkdirSync, unlink, writeFileSync } from 'fs';
 import { Readable } from 'stream';
 import { pipeline } from 'stream/promises';
 import { isSafePublicHttpsUrl } from '@gitroom/nestjs-libraries/dtos/webhooks/webhook.url.validator';
-import { ssrfSafeDispatcher } from '@gitroom/nestjs-libraries/dtos/webhooks/ssrf.safe.dispatcher';
+import { fetchPublicHttps } from '@gitroom/nestjs-libraries/dtos/webhooks/ssrf.safe.dispatcher';
 import { parseDataUrl } from '@gitroom/nestjs-libraries/upload/data.url';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { fileTypeFromBuffer } = require('file-type');
@@ -59,10 +59,7 @@ export class LocalStorage implements IUploadProvider {
       if (!(await isSafePublicHttpsUrl(path))) {
         throw new Error('Unsafe URL');
       }
-      const loadImage = await fetch(path, {
-        // @ts-ignore — undici option, not in lib.dom fetch types
-        dispatcher: ssrfSafeDispatcher,
-      });
+      const loadImage = await fetchPublicHttps(path);
       body = Buffer.from(await loadImage.arrayBuffer());
     }
 
