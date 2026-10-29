@@ -2,9 +2,9 @@
 name: Build
 
 on:
-  push:
-  merge_group:
-  pull_request:
+  # The SGE baseline already builds all three apps and runs the security/tests gates.
+  # Keep this inherited build available for an explicit diagnostic run only.
+  workflow_dispatch:
 
 jobs:
   build:

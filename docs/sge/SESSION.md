@@ -1,5 +1,43 @@
 # SGE publishing session
 
+## 2026-10-29 — Bound Postiz CI triggers
+
+FACT — Refreshed origin/Main `58f0faf`, recent Actions and the latest failure
+log. Repeated scheduled staging jobs fail SSH preflight; issue maintenance is
+scheduled but skips this fork. P1f's exact code already passed
+[Build](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/runs/40381498379),
+[SGE baseline](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/runs/40381498422)
+and [CodeQL](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/runs/40381498391).
+Main protection returned 404 `Branch not protected`; repository rulesets were `[]`.
+
+Created isolated `codex/postiz-ci-triggers` from origin/Main; preserved Labs and
+the incomplete `codex/sge-high-dependencies` working copy. Removed both cron
+schedules and made inherited Build manual-only. SGE baseline retains its complete
+job, adds manual and merge-queue events, and skips only docs/branding-only changes
+on Main pushes/PRs. Mixed changes and future code/configuration remain covered.
+CodeQL and publishing workflows are unchanged. No credentials were added.
+
+Validation: official actionlint 1.7.12 Darwin ARM64 archive SHA-256
+`aba9ced2dee8d27fecca3dc7feb1a7f9a52caefa1eb46f3271ea66b6e0e6953f`
+matches the release checksum. All nine active YAML workflows pass with optional
+shellcheck/pyflakes integrations disabled. Its first pass found an inherited
+unsupported `exempt-pr-label` input; corrected it to `exempt-pr-labels` and reran.
+All 21 local event/path scenarios pass. Deep comparison confirms the complete SGE
+job definitions and CodeQL are unchanged; existing cancellation is preserved.
+Fresh independent read-only architecture/convention review: 9.2/10, no scoped
+CI regression; its stale baseline-documentation finding is corrected.
+Application tests/build are not rerun locally for this workflow/docs-only patch;
+the delivered SGE run remains a separate exact-SHA check.
+
+Self-review: diagnosis 9.0/10 (current run/log evidence); configuration 9.0/10
+(bounded changes, required verification retained); validation/tracking 9.0/10
+(actionlint plus event/path checks, with hosted scheduling still to be observed).
+No application, dependency, UI/content, Temporal history, provider, production
+or deployment change. High-dependency repair remains unfinished and is not
+included. Future branch protection must reconcile filtered required workflows.
+Already queued historical runs can still finish; no absence-of-future-runs claim
+is inferred from a short observation window.
+
 ## 2026-10-26 — P1f URL, DNS and redirect boundary
 
 Started from clean own-fork Main `ce9c066`; fetched origin and verified equality.

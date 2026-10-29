@@ -73,10 +73,11 @@ the tested local baseline; container/runtime parity is not claimed.
 - Inherited Docker scripts request stages absent from `Dockerfile.dev`, and its
   PM2 install is unpinned. Container packaging is a P2 prerequisite, not a
   tested P1 deployment path.
-- Inherited scheduled staging-conflict automation can use an agent/deploy key;
-  extension/container workflows can publish. Do not enable these jobs or add
-  secrets merely to validate this fork. Only the existing GitHub build's Node
-  matrix is corrected; its build steps and all other inherited workflows remain.
+- Inherited staging-conflict automation can use an agent/deploy key;
+  extension/container workflows can publish. Do not run these jobs or add
+  secrets merely to validate this fork. Staging resolution, issue maintenance
+  and the duplicate inherited Build are manual-only as of October 29; no
+  scheduled workflows remain. Publishing triggers are unchanged.
 - The inherited file `.github/workflows/eslint` lacks a YAML extension and is
   not an active GitHub Actions gate. Do not report it as lint evidence.
 
@@ -86,6 +87,19 @@ secrets. It runs frozen installation without hooks, explicit Prisma generation,
 types, baseline lint, real tests, and the default three-app build. No deploy,
 workflow-history change, service startup, or publishing step is present.
 Local success is not a hosted-CI success; record actual runs separately.
+
+FACT — The SGE baseline is the single automatic three-app build: relevant pushes
+to Main, pull requests targeting Main, and merge-queue groups. Root Markdown,
+`docs/`, `apps/docs/` and GitHub branding/issue-template changes alone skip it;
+mixed changes and nested runtime Markdown still run it. Manual dispatch can
+explicitly run the complete gate. Existing per-ref cancellation replaces obsolete
+runs. CodeQL remains a separate unchanged code-security workflow.
+
+FACT — Main protection returned `Branch not protected` and repository rulesets
+were empty on October 29. Before introducing required checks, reconcile these
+top-level path filters: GitHub leaves required checks pending when their workflow
+is filtered out. Use an always-reporting gate if docs-only PRs must satisfy one.
+See [GitHub path-filter semantics](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#onpushpull_requestpull_request_targetpathspaths-ignore).
 
 ## Reproducible local verification procedure
 

@@ -1,21 +1,30 @@
 name: SGE fork baseline
 
 on:
+  workflow_dispatch:
+  merge_group:
   pull_request:
+    branches: [main]
+    paths-ignore:
+      - '*.md'
+      - 'docs/**'
+      - 'apps/docs/**'
+      - '.github/assets/**'
+      - '.github/agents/**'
+      - '.github/sponsors/**'
+      - '.github/ISSUE_TEMPLATE/**'
+      - '.github/FUNDING.yaml'
   push:
     branches: [main]
-    paths:
-      - '.github/workflows/sge-baseline.yml'
-      - 'package.json'
-      - 'pnpm-lock.yaml'
-      - 'pnpm-workspace.yaml'
-      - '.npmrc'
-      - 'eslint.config.mjs'
-      - 'tsconfig*.json'
-      - 'vitest.sge.config.ts'
-      - 'tests/**'
-      - 'apps/**'
-      - 'libraries/**'
+    paths-ignore:
+      - '*.md'
+      - 'docs/**'
+      - 'apps/docs/**'
+      - '.github/assets/**'
+      - '.github/agents/**'
+      - '.github/sponsors/**'
+      - '.github/ISSUE_TEMPLATE/**'
+      - '.github/FUNDING.yaml'
 
 permissions:
   contents: read

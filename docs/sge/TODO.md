@@ -1,6 +1,6 @@
 # Open SGE publishing work
 
-Updated: 2026-10-26. Scope and acceptance: [integration plan](INTEGRATION_PLAN.md).
+Updated: 2026-10-29. Scope and acceptance: [integration plan](INTEGRATION_PLAN.md).
 
 ## Completed package and next security work
 
@@ -31,13 +31,16 @@ Updated: 2026-10-26. Scope and acceptance: [integration plan](INTEGRATION_PLAN.m
 - [x] Enforce HTTPS for media/webhooks and wire both Bluesky SDK constructors.
 - [x] Prove old/new literal behavior and 51 new cases (302 total); types/lint pass.
 - [x] Finish P1f full build, offline Prisma and critical audit; final local score 8.8/10.
-- [ ] Verify exact-SHA P1f hosted delivery independently.
+- [x] Verify exact-SHA P1f hosted delivery independently: Build 40381498379,
+  SGE baseline 40381498422 and CodeQL 40381498391 succeeded on `58f0faf`.
 - [ ] Triage 139 remaining high production audit entries before any exposed service or real token.
   Distinguish version matches from shipped/reachable paths; do not infer exploitability.
 - [ ] Triage the newly reported moderate Vitest-Mocker advisory in the unchanged graph.
 - [ ] Triage newly reported Zod collection-limit findings in the unchanged graph.
-- [ ] Make inherited staging automation appropriate for this fork; its SSH preflight
-  fails without a usable deploy key. Do not add production credentials as a workaround.
+- [x] Stop inherited staging/issue schedules and duplicate automatic builds;
+  retain relevant full verification, merge queues, manual dispatch and CodeQL.
+- [ ] Reconcile path filters with an always-reporting gate before introducing
+  required branch checks; documentation-only PRs otherwise leave them pending.
 - [ ] Repair or prove absence of affected dependencies in the selected text-only
   artifact, with focused regressions and fresh audits after bounded changes.
 - [ ] Confirm GitHub's newly enabled history secret scan has completed; the local

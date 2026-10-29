@@ -1,6 +1,6 @@
 # Postiz as the SGE publishing service
 
-Updated: 2026-10-26. Status: P1 technical baseline accepted locally and on GitHub; release blocked.
+Updated: 2026-10-29. Status: P1 technical baseline accepted locally and on GitHub; release blocked.
 
 This document is the canonical plan for this fork. [ROADMAP](ROADMAP.md)
 tracks order, [TODO](TODO.md) tracks open work, [SESSION](SESSION.md) records
@@ -423,6 +423,34 @@ request. Actual artifact egress allowlisting, hosted network/proxy/TLS behavior,
 auth/token/tenant isolation and operating acceptance remain release gates. No
 Temporal workflow file or activity parameter, UI/design, credentials, deployment
 or publication changed. See the current next gate for final verification.
+
+### P1-CI — Stop unattended and duplicate validation runs
+
+FACT — The owner requested fewer unnecessary CI runs. Recent GitHub history
+showed repeated scheduled staging failures on unchanged `58f0faf` (latest
+[SSH preflight failure](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/runs/40881115455))
+and skipped issue-maintenance runs. Their inherited schedules requested ten- and
+thirty-minute intervals. A relevant Main push also ran the full three-app build
+twice, once in Build and again in SGE fork baseline.
+
+Make Build, staging-conflict resolution and stale-issue maintenance manual-only;
+remove their automatic events rather than merely skipping their jobs. Keep SGE
+baseline as the single automatic full verification for relevant Main pushes,
+Main PRs and merge queues. Skip documentation/branding-only changes and retain
+existing per-ref cancellation. Keep manual full verification and CodeQL.
+The full audit/install/Prisma/type/lint/test/build job is unchanged. Correct the
+inherited `exempt-pr-label` typo to the supported `exempt-pr-labels` input.
+
+Validation: actionlint 1.7.12 passes all nine active YAML workflows, with its
+optional external shellcheck/pyflakes integrations disabled. Twenty-one local
+event/path scenarios pass, including mixed changes, nested runtime Markdown,
+dependencies, Docker and unknown future root configuration. Job definitions and
+CodeQL were compared to `58f0faf` and are unchanged. Main has no branch protection
+or repository rulesets at the time checked; reconcile path filters before adding
+required checks. Fresh independent static review: 9.2/10; its stale baseline
+documentation finding is corrected. Local CI-policy acceptance: 9.0/10; hosted exact-revision status
+remains a separate check after delivery. No app/dependency/Temporal changes are
+included; the separate high-dependency repair remains unfinished and unaccepted.
 
 ### P2 — Define and prove isolated service operation
 

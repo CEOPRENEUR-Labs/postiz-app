@@ -1,5 +1,21 @@
 # SGE publishing changes
 
+## 2026-10-29 — Stop repeated and duplicate CI runs
+
+Removed the inherited ten-minute staging and thirty-minute issue-maintenance
+schedules. Both helpers and the duplicate Build are manual-only. SGE baseline
+remains the automatic full build/test/security gate for relevant Main pushes,
+Main PRs and merge queues; documentation/branding-only changes skip it. Existing
+obsolete-run cancellation and CodeQL remain. Unknown future code/configuration
+paths run by default. Corrected the inherited stale-action input typo.
+
+All nine active YAML workflows pass actionlint; 21 local event/path scenarios
+pass. Audit/install/Prisma/types/lint/tests/build job definitions and CodeQL are
+unchanged. Local scope assessment: 9.0/10; exact-SHA hosted validation is separate.
+Plan, baseline and tracking explain the required-check/path-filter caveat before
+future branch protection. No application, dependency, provider or deployment
+change; the separate high-dependency security package remains open.
+
 ## 2026-10-26 — URL, DNS and redirect transport repair
 
 Closed literal-IP and DNS-to-use gaps in the shared Fetch/Axios transports,
