@@ -11,7 +11,9 @@ paths run by default. Corrected the inherited stale-action input typo.
 
 All nine active YAML workflows pass actionlint; 21 local event/path scenarios
 pass. Audit/install/Prisma/types/lint/tests/build job definitions and CodeQL are
-unchanged. Local scope assessment: 9.0/10; exact-SHA hosted validation is separate.
+unchanged. Scope assessment: 9.0/10; independent static review: 9.2/10. The only
+automatic run on `f50d2d3`, [SGE baseline 40886838308](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/runs/40886838308),
+passed all gates, including the complete three-app build.
 Plan, baseline and tracking explain the required-check/path-filter caveat before
 future branch protection. No application, dependency, provider or deployment
 change; the separate high-dependency security package remains open.

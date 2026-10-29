@@ -38,6 +38,14 @@ included. Future branch protection must reconcile filtered required workflows.
 Already queued historical runs can still finish; no absence-of-future-runs claim
 is inferred from a short observation window.
 
+Delivery: `f50d2d3eb1b76c5c341e078ba49cfc71b37a05ca` was fast-forward pushed
+to own-fork Main. GitHub created exactly one automatic run for that SHA:
+[SGE baseline 40886838308](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/runs/40886838308),
+completed successfully. Critical audit, frozen installation, Prisma, types,
+lint, tests and all three app builds passed. No duplicate Build or CodeQL run
+was expected for the workflow/docs-only patch. These final tracking changes are
+documentation-only and should not start another full build under the new policy.
+
 ## 2026-10-26 — P1f URL, DNS and redirect boundary
 
 Started from clean own-fork Main `ce9c066`; fetched origin and verified equality.

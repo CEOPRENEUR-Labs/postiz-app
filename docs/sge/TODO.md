@@ -39,6 +39,8 @@ Updated: 2026-10-29. Scope and acceptance: [integration plan](INTEGRATION_PLAN.m
 - [ ] Triage newly reported Zod collection-limit findings in the unchanged graph.
 - [x] Stop inherited staging/issue schedules and duplicate automatic builds;
   retain relevant full verification, merge queues, manual dispatch and CodeQL.
+- [x] Verify the CI-policy delivery on exact `f50d2d3`: only SGE baseline
+  40886838308 started automatically and every gate passed.
 - [ ] Reconcile path filters with an always-reporting gate before introducing
   required branch checks; documentation-only PRs otherwise leave them pending.
 - [ ] Repair or prove absence of affected dependencies in the selected text-only

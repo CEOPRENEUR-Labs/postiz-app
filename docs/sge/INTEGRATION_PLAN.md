@@ -448,8 +448,10 @@ dependencies, Docker and unknown future root configuration. Job definitions and
 CodeQL were compared to `58f0faf` and are unchanged. Main has no branch protection
 or repository rulesets at the time checked; reconcile path filters before adding
 required checks. Fresh independent static review: 9.2/10; its stale baseline
-documentation finding is corrected. Local CI-policy acceptance: 9.0/10; hosted exact-revision status
-remains a separate check after delivery. No app/dependency/Temporal changes are
+documentation finding is corrected. CI-policy acceptance: 9.0/10. The only
+automatic run on `f50d2d3`, [SGE baseline 40886838308](https://github.com/CEOPRENEUR-Labs/postiz-app/actions/runs/40886838308),
+passed audit, install, Prisma, types, lint, tests and the full three-app build.
+No app/dependency/Temporal changes are
 included; the separate high-dependency repair remains unfinished and unaccepted.
 
 ### P2 — Define and prove isolated service operation
